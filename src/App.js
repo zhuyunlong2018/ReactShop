@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Pages from './pages/Pages';
+import Pages from 'SRC/pages/Pages';
 import 'antd-mobile/dist/antd-mobile.css'; 
-import './App.css';
+import 'PUBLIC/css/normalize.css'
+import 'SRC/App.css';
 class App extends Component {
   render() {
     return (

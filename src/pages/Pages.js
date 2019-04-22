@@ -1,12 +1,18 @@
 import React from 'react';
 import { TabBar } from 'antd-mobile';
-import Home from './home/Home';
+import Home from 'SRC/pages/home/Home';
+import Category from 'SRC/pages/category/Category'
+import Cart from 'SRC/pages/cart/Cart'
+import My from 'SRC/pages/my/My'
+const requireContext = require.context("PUBLIC/images/footer", true, /^\.\/.*\.png$/);
 
+const images = requireContext.keys().map(requireContext);
 class Pages extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: 'redTab',
+            selectedTab: 'home',
             hidden: false,
             fullScreen: false,
         };
@@ -14,7 +20,7 @@ class Pages extends React.Component {
     renderContent(pageText) {
         return (
             <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-                <Home></Home>
+                {pageText}
             </div>
         );
     }
@@ -28,39 +34,39 @@ class Pages extends React.Component {
                     hidden={this.state.hidden}
                 >
                     <TabBar.Item
-                        title="Life"
-                        key="Life"
+                        title="home"
+                        key="home"
                         icon={<div style={{
                             width: '22px',
                             height: '22px',
-                            background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat'
+                            background: `url(${images[0]}) center center /  21px 21px no-repeat`
                         }}
                         />
                         }
                         selectedIcon={<div style={{
                             width: '22px',
                             height: '22px',
-                            background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
+                            background: `url(${images[1]}) center center /  21px 21px no-repeat`
                         }}
                         />
                         }
-                        selected={this.state.selectedTab === 'blueTab'}
-                        badge={1}
+                        selected={this.state.selectedTab === 'home'}
+                        // badge={1}
                         onPress={() => {
                             this.setState({
-                                selectedTab: 'blueTab',
+                                selectedTab: 'home',
                             });
                         }}
                         data-seed="logId"
                     >
-                        {this.renderContent('Life')}
+                        {this.renderContent(<Home/>)}
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
                             <div style={{
                                 width: '22px',
                                 height: '22px',
-                                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat'
+                                background: `url(${images[2]}) center center /  21px 21px no-repeat`
                             }}
                             />
                         }
@@ -68,29 +74,29 @@ class Pages extends React.Component {
                             <div style={{
                                 width: '22px',
                                 height: '22px',
-                                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat'
+                                background: `url(${images[3]}) center center /  21px 21px no-repeat`
                             }}
                             />
                         }
-                        title="Koubei"
-                        key="Koubei"
-                        badge={'new'}
-                        selected={this.state.selectedTab === 'redTab'}
+                        title="category"
+                        key="category"
+                        // badge={'new'}
+                        selected={this.state.selectedTab === 'category'}
                         onPress={() => {
                             this.setState({
-                                selectedTab: 'redTab',
+                                selectedTab: 'category',
                             });
                         }}
                         data-seed="logId1"
                     >
-                        {this.renderContent('Koubei')}
+                        {this.renderContent(<Category/>)}
                     </TabBar.Item>
                     <TabBar.Item
                         icon={
                             <div style={{
                                 width: '22px',
                                 height: '22px',
-                                background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat'
+                                background: `url(${images[4]}) center center /  21px 21px no-repeat`
                             }}
                             />
                         }
@@ -98,35 +104,49 @@ class Pages extends React.Component {
                             <div style={{
                                 width: '22px',
                                 height: '22px',
-                                background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat'
+                                background: `url(${images[5]}) center center /  21px 21px no-repeat`
                             }}
                             />
                         }
-                        title="Friend"
-                        key="Friend"
+                        title="cart"
+                        key="cart"
                         dot
-                        selected={this.state.selectedTab === 'greenTab'}
+                        selected={this.state.selectedTab === 'cart'}
                         onPress={() => {
                             this.setState({
-                                selectedTab: 'greenTab',
+                                selectedTab: 'cart',
                             });
                         }}
                     >
-                        {this.renderContent('Friend')}
+                        {this.renderContent(<Cart/>)}
                     </TabBar.Item>
                     <TabBar.Item
-                        icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-                        selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
+                        icon={
+                            <div style={{
+                                width: '22px',
+                                height: '22px',
+                                background: `url(${images[6]}) center center /  21px 21px no-repeat`
+                            }}
+                            />
+                        }
+                        selectedIcon={
+                            <div style={{
+                                width: '22px',
+                                height: '22px',
+                                background: `url(${images[7]}) center center /  21px 21px no-repeat`
+                            }}
+                            />
+                        }
                         title="My"
                         key="my"
-                        selected={this.state.selectedTab === 'yellowTab'}
+                        selected={this.state.selectedTab === 'my'}
                         onPress={() => {
                             this.setState({
-                                selectedTab: 'yellowTab',
+                                selectedTab: 'my',
                             });
                         }}
                     >
-                        {this.renderContent('My')}
+                        {this.renderContent(<My/>)}
                     </TabBar.Item>
                 </TabBar>
             </div>

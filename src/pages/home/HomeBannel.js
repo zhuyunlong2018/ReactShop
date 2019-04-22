@@ -1,18 +1,17 @@
 import React from 'react';
 import { Carousel, WingBlank } from 'antd-mobile';
-
-import bannel1 from './../../../public/images/bannel_1.jpg';
-
+const requireContext = require.context("PUBLIC/images/home_bannel", true, /^\.\/.*\.jpg$/);
+const images = requireContext.keys().map(requireContext);
 class HomeBannel extends React.Component {
   state = {
-    data: ['1', '2', '3'],
+    data: [],
     imgHeight: 176,
   }
   componentDidMount() {
     // simulate img loading
     setTimeout(() => {
       this.setState({
-        data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+        data: images,
       });
     }, 100);
   }
