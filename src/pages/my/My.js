@@ -1,4 +1,6 @@
 import React from 'react'
+import { login } from 'SRC/api/user'
+
 
 class My extends React.Component {
 
@@ -8,6 +10,13 @@ class My extends React.Component {
             <div>MY</div>
         )
     }
+
+    componentDidMount(){
+        // 调用
+       login({aa:'aad'}).then(res => {
+         console.log(res)
+       })
+     }
 }
 
 export default My;
