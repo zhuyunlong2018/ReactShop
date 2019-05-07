@@ -1,6 +1,5 @@
 import React from 'react'
 import { List, Grid } from 'antd-mobile';
-
 import './Category.css'
 
 class Category extends React.Component {
@@ -54,36 +53,40 @@ class Category extends React.Component {
             })}
         </List>
     );
-    const data = Array.from(new Array(9)).map((_val, i) => ({
-        icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
-        text: `name${i}`,
-      }));
       
-    const data1 = Array.from(new Array(9)).map(() => ({
+    const data1 = Array.from(new Array(7)).map(() => ({
         icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
     }));
     const renderContent = (
         <List>
-            
-            <div className="sub-title">Custom content</div>
-            <Grid data={data1}
-            columnNum={3}
-            renderItem={dataItem => (
-                <div style={{ padding: '12.5px' }}>
-                <img src={dataItem.icon} style={{ width: '75px', height: '75px' }} alt="" />
-                <div style={{ color: '#888', fontSize: '14px', marginTop: '12px' }}>
-                    <span>I am title..</span>
-                </div>
-                </div>
-            )}
-            />
+            {tabs.map((i, index) => {
+                return (
+                    <List.Item key={index} 
+                    style = {{ border: 'none' }}
+                    activeStyle = {{ background: '#fff'}}
+                    >
+                        <div className="sub-title">Custom content</div>
+                        <Grid data={data1}
+                        columnNum={3}
+                        renderItem={dataItem => (
+                            <div style={{ padding: '12.5px' }}>
+                            <img src={dataItem.icon} style={{ width: '75px', height: '75px' }} alt="" />
+                            <div style={{ color: '#888', fontSize: '14px', marginTop: '12px' }}>
+                                <span>I am title..</span>
+                            </div>
+                            </div>
+                        )}
+                        />
+                    </List.Item>
+                );
+            })}
         </List>
     );
     
     return (
         <ul style={categoryBox}>
             <li style={category}>{sidebar}</li>
-            <li style={container}>{renderContent}</li>
+            <li style={rightContainer}>{renderContent}</li>
         </ul>
     );
   }
@@ -102,7 +105,7 @@ const category = {
     overflow: 'scroll'
 }
 
-const container = {
+const rightContainer = {
     flex: 1,
     overflow: 'scroll'
 }

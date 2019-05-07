@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 import { TabBar } from 'antd-mobile';
 import Home from 'SRC/pages/home/Home';
 import Category from 'SRC/pages/category/Category'
@@ -25,6 +26,12 @@ class Pages extends React.Component {
         );
     }
     render() {
+        const tabs = [
+            { title: 'home', icon: images[0], selectIcon: images[1], content: <Home/> },
+            { title: 'category', icon: images[2], selectIcon: images[3], content: <Category/> },
+            { title: 'cart', icon: images[4], selectIcon: images[5], content: <Cart/> },
+            { title: 'my', icon: images[6], selectIcon: images[7], content: <My/> },
+          ];
         return (
             <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: '100vh' }}>
                 <TabBar
@@ -33,125 +40,41 @@ class Pages extends React.Component {
                     barTintColor="white"
                     hidden={this.state.hidden}
                 >
+                {tabs.map((i, index) => {
+                    return (
                     <TabBar.Item
-                        title="home"
-                        key="home"
+                        title={i.title}
+                        key={i.title}
                         icon={<div style={{
                             width: '22px',
                             height: '22px',
-                            background: `url(${images[0]}) center center /  21px 21px no-repeat`
+                            background: `url(${i.icon}) center center /  21px 21px no-repeat`
                         }}
                         />
                         }
                         selectedIcon={<div style={{
                             width: '22px',
                             height: '22px',
-                            background: `url(${images[1]}) center center /  21px 21px no-repeat`
+                            background: `url(${i.selectIcon}) center center /  21px 21px no-repeat`
                         }}
                         />
                         }
-                        selected={this.state.selectedTab === 'home'}
+                        selected={this.state.selectedTab === i.title}
                         // badge={1}
                         onPress={() => {
                             this.setState({
-                                selectedTab: 'home',
-                            });
-                        }}
-                        data-seed="logId"
-                    >
-                        {this.renderContent(<Home/>)}
-                    </TabBar.Item>
-                    <TabBar.Item
-                        icon={
-                            <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: `url(${images[2]}) center center /  21px 21px no-repeat`
-                            }}
-                            />
-                        }
-                        selectedIcon={
-                            <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: `url(${images[3]}) center center /  21px 21px no-repeat`
-                            }}
-                            />
-                        }
-                        title="category"
-                        key="category"
-                        // badge={'new'}
-                        selected={this.state.selectedTab === 'category'}
-                        onPress={() => {
-                            this.setState({
-                                selectedTab: 'category',
-                            });
-                        }}
-                        data-seed="logId1"
-                    >
-                        {this.renderContent(<Category/>)}
-                    </TabBar.Item>
-                    <TabBar.Item
-                        icon={
-                            <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: `url(${images[4]}) center center /  21px 21px no-repeat`
-                            }}
-                            />
-                        }
-                        selectedIcon={
-                            <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: `url(${images[5]}) center center /  21px 21px no-repeat`
-                            }}
-                            />
-                        }
-                        title="cart"
-                        key="cart"
-                        dot
-                        selected={this.state.selectedTab === 'cart'}
-                        onPress={() => {
-                            this.setState({
-                                selectedTab: 'cart',
+                                selectedTab: i.title,
                             });
                         }}
                     >
-                        {this.renderContent(<Cart/>)}
+                        {this.renderContent(i.content)}
                     </TabBar.Item>
-                    <TabBar.Item
-                        icon={
-                            <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: `url(${images[6]}) center center /  21px 21px no-repeat`
-                            }}
-                            />
-                        }
-                        selectedIcon={
-                            <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: `url(${images[7]}) center center /  21px 21px no-repeat`
-                            }}
-                            />
-                        }
-                        title="My"
-                        key="my"
-                        selected={this.state.selectedTab === 'my'}
-                        onPress={() => {
-                            this.setState({
-                                selectedTab: 'my',
-                            });
-                        }}
-                    >
-                        {this.renderContent(<My/>)}
-                    </TabBar.Item>
+                    )})
+                }
                 </TabBar>
             </div>
         );
     }
 }
 
-export default Pages;
+export default withRouter(Pages);

@@ -1,0 +1,10 @@
+{
+    "code": 0,
+    "msg": "success",
+    "data" : {
+        "name": "test-user",
+        "avatar": "my-avatar",
+        "introductor": "my name is test-user",
+        "token": "fdahsfouasdfpasdfasdfjnasdfpjapsdf"
+    }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Popover, NavBar, Icon } from 'antd-mobile';
-
+import { withRouter } from 'react-router-dom';
 const Item = Popover.Item;
 const myImg = src => <img src={`https://gw.alipayobjects.com/zos/rmsportal/${src}.svg`} className="am-icon am-icon-xs" alt="" />;
 
@@ -23,6 +23,7 @@ class HomeNavBar extends React.Component {
     });
   };
 
+
   render() {
     return (
       <div>
@@ -30,7 +31,10 @@ class HomeNavBar extends React.Component {
           mode="light"
           onLeftClick={() => console.log('onLeftClick')}
           rightContent={[
-            <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
+            <Icon key="0" type="search" style={{ marginRight: '16px' }} 
+              onClick={() => this.props.history.push('/search')}
+            />
+            ,
             <Popover key="1" mask
               overlayClassName="fortest"
               overlayStyle={{ color: 'currentColor' }}
@@ -67,4 +71,4 @@ class HomeNavBar extends React.Component {
   }
 }
 
-export default HomeNavBar;
+export default withRouter(HomeNavBar);

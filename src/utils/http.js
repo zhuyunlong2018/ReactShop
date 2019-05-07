@@ -2,10 +2,13 @@ import axios from 'axios'
 import { Toast } from 'antd-mobile';
 import store from 'SRC/store'
 
+
+// baseURL: process.env.BASE_API, 
+const baseURL = "mock" // api 的 base_url
+
 // 创建axios实例
 const service = axios.create({
-  // baseURL: process.env.BASE_API, // api 的 base_url
-  baseURL: "http://localhost:8080", // api 的 base_url
+  baseURL: baseURL,
   timeout: 5000 // 请求超时时间
 })
 const state = store.getState()
@@ -33,6 +36,10 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     Toast.hide();
+    if (response.status == 200) {
+      const data = response.data
+      return data;
+    }
     return response
   },
   error => {
@@ -49,11 +56,18 @@ service.interceptors.response.use(
 class http {
   // 使用async ... await
   static async get(url, params) {
-    console.log(params)
+    // console.log(params)
+    if (baseURL == 'mock') {
+      url += '.json'
+    }
     return await service.get(url, {params}) 
   }
   static async post(url, params) {
-    console.log(params)
+    // console.log(params)
+    if (baseURL == 'mock') {
+      url += '.json'
+      return await service.get(url, {params})
+    }
     return await service.post(url, params);
   }
 }
