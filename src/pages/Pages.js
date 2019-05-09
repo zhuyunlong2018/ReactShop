@@ -18,13 +18,7 @@ class Pages extends React.Component {
             fullScreen: false,
         };
     }
-    renderContent(pageText) {
-        return (
-            <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-                {pageText}
-            </div>
-        );
-    }
+
     render() {
         const tabs = [
             { title: 'home', icon: images[0], selectIcon: images[1], content: <Home/> },
@@ -50,8 +44,7 @@ class Pages extends React.Component {
                             height: '22px',
                             background: `url(${i.icon}) center center /  21px 21px no-repeat`
                         }}
-                        />
-                        }
+                        />}
                         selectedIcon={<div style={{
                             width: '22px',
                             height: '22px',
@@ -67,7 +60,9 @@ class Pages extends React.Component {
                             });
                         }}
                     >
-                        {this.renderContent(i.content)}
+                        <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
+                            {i.content}
+                        </div>
                     </TabBar.Item>
                     )})
                 }

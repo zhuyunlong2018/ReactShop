@@ -12,16 +12,15 @@ const service = axios.create({
   timeout: 5000 // 请求超时时间
 })
 const state = store.getState()
-console.log(state)
 // request拦截器
 service.interceptors.request.use(
   config => {
-    // if (store.getters.token) {
-    //   config.headers['token'] = getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
-    // }
-    // if(commonInfo.hasLoading){
-    //     Toast.loading('', 3);
-    // }
+    if (state.userInfo.token) {
+      config.headers['token'] = state.userInfo.token // 让每个请求携带自定义token 请根据实际情况自行修改
+    }
+    if(state.commonInfo.hasLoading){
+        Toast.loading('', 3);
+    }
     return config
   },
   error => {
