@@ -8,5 +8,8 @@ class Cart extends React.Component {
             <div>Cart</div>
         )
     }
+    componentDidMount(){
+        console.log('cart')
+    }
 }
 export default Cart;

@@ -1,15 +1,15 @@
 import * as common from './actionType';
 
-let commonInfo = {
+let defaultState = {
     hasLoading: false, //显示
   }
   
 // 加载动画开关
-export const commonInfo = (state = commonInfo , action = {}) => {
+export const commonInfo = (state = defaultState , action = {}) => {
 switch(action.type){
     case common.TOOGLE_LOADING:
-    return {...state, ...{[action.datatype]: action.value}};
+      return {...state, ...{hasLoading: action.value}};
     default:
-    return state;
+      return state;
 }
 }

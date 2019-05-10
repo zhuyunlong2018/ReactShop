@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Flex, WingBlank, WhiteSpace } from 'antd-mobile';
+import {  Flex, WingBlank } from 'antd-mobile';
 
 const requireContext = require.context("PUBLIC/images/home_promotion", true, /^\.\/.*\.jpg$/);
 const images = requireContext.keys().map(requireContext);

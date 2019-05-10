@@ -1,8 +1,8 @@
 import React from 'react';
-import HomeNavBar from './HomeNavBar';
-import HomeBannel from './HomeBannel';
-import Promotion from './Promotion';
-import SellWell from './SellWell';
+import HomeNavBar from './components/HomeNavBar';
+import HomeBannel from './components/HomeBannel';
+import Promotion from './components/Promotion';
+import SellWell from './components/SellWell';
 class Home extends React.Component {
 
     render() {
@@ -15,6 +15,9 @@ class Home extends React.Component {
             </div>
         );
     }
+    componentDidMount(){
+        console.log('home')
+    }
 }
-
+    
 export default Home;

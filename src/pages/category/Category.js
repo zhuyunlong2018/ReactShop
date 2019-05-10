@@ -1,6 +1,6 @@
 import React from 'react'
-import { List, Grid } from 'antd-mobile';
-import './Category.css'
+import { List, Grid } from 'antd-mobile'
+import * as style from './style'
 
 class Category extends React.Component {
     state = {
@@ -48,7 +48,7 @@ class Category extends React.Component {
                 this.setState({activedId: i.id})
             }}
             >
-                <span style={this.state.activedId==i.id? actived:{}}>{i.title}</span>
+                <span style={this.state.activedId===i.id? style.actived:{}}>{i.title}</span>
             </List.Item>);
             })}
         </List>
@@ -84,33 +84,16 @@ class Category extends React.Component {
     );
     
     return (
-        <ul style={categoryBox}>
-            <li style={category}>{sidebar}</li>
-            <li style={rightContainer}>{renderContent}</li>
+        <ul style={style.categoryBox}>
+            <li style={style.category}>{sidebar}</li>
+            <li style={style.rightContainer}>{renderContent}</li>
         </ul>
     );
+  }
+  componentDidMount(){
+    console.log('catagory')
   }
 }
 
 export default Category;
-
-const categoryBox = {
-    display: 'flex',
-    height: '100%'
-}
-
-const category = {
-    width: '110px',
-    borderRight: '1px solid #eee',
-    overflow: 'scroll'
-}
-
-const rightContainer = {
-    flex: 1,
-    overflow: 'scroll'
-}
-
-const actived = {
-    color: '#1296db'
-}
 

@@ -12,10 +12,11 @@ class My extends React.Component {
     }
 
     componentDidMount(){
+      console.log('my')
         // 调用
-       login({aa:'aad'}).then(res => {
-         console.log(res)
-       })
+      //  login({aa:'aad'}).then(res => {
+      //    console.log(res)
+      //  })
      }
 }
 
