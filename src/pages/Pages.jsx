@@ -1,10 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 import { TabBar } from 'antd-mobile';
-import Home from 'SRC/pages/home/Home';
-import Category from 'SRC/pages/category/Category'
-import Cart from 'SRC/pages/cart/Cart'
-import My from 'SRC/pages/my/My'
+import Home from 'SRC/pages/home/Home.jsx';
+import Category from 'SRC/pages/category/Category.jsx'
+import Cart from 'SRC/pages/cart/Cart.jsx'
+import My from 'SRC/pages/my/My.jsx'
 const requireContext = require.context("PUBLIC/images/footer", true, /^\.\/.*\.png$/);
 
 const images = requireContext.keys().map(requireContext);

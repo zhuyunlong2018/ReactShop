@@ -11,7 +11,7 @@ class Search extends React.Component {
     componentDidMount() {
         // this.autoFocusInst.focus();
     }
-    onChange= (value) => {
+    onChange = (value) => {
         this.setState({ value });
     }
     clear = () => {

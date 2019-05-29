@@ -1,9 +1,10 @@
 {
-    "code": 0,
+    "code": 200,
     "msg": "success",
     "data" : {
         "name": "test-user",
         "avatar": "my-avatar",
+        "mobile": "12345678912",
         "introductor": "my name is test-user",
         "token": "fdahsfouasdfpasdfasdfjnasdfpjapsdf"
     }

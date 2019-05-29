@@ -1,10 +1,9 @@
 import * as user from './actionType';
 
 // 保存用户信息
-export const saveInfo = (value, datatype) => {
+export const saveInfo = (obj) => {
   return {
     type: user.SAVE_INFO,
-    value,
-    datatype,
+    obj,
   }
 }

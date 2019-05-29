@@ -3,7 +3,7 @@
 export default class Storage {
     
     // 本地存储
-    setStorage(name, data){
+    static setStorage(name, data){
         let dataType = typeof data;
         // json对象
         if(dataType === 'object'){
@@ -19,7 +19,7 @@ export default class Storage {
         }
     }
     // 取出本地存储内容
-    getStorage(name){
+    static getStorage(name){
         let data = window.localStorage.getItem(name);
         if(data){
             return JSON.parse(data);
@@ -29,7 +29,7 @@ export default class Storage {
         }
     }
     // 删除本地存储
-    removeStorage(name){
+    static removeStorage(name){
         window.localStorage.removeItem(name);
     }
 }

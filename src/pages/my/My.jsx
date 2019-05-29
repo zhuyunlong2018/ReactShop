@@ -1,5 +1,5 @@
 import React from 'react'
-import { login } from 'SRC/api/user'
+// import { login } from 'SRC/api/user'
 
 
 class My extends React.Component {

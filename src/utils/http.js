@@ -3,9 +3,7 @@ import { Toast } from 'antd-mobile';
 import store from 'SRC/store'
 import { toggleLoading } from 'SRC/store/common/action'
 
-
-// baseURL: process.env.BASE_API, 
-const baseURL = "mock" // api 的 base_url
+const baseURL = process.env.REACT_APP_API// api 的 base_url
 
 // 创建axios实例
 const service = axios.create({
@@ -52,8 +50,9 @@ service.interceptors.response.use(
     if (response.status === 200) {
       const data = response.data
       return data;
+    } else {
+      return Promise.reject(response)
     }
-    return response
   },
   error => {
     console.log('err' + error) // for debug
