@@ -1,0 +1,71 @@
+.container {
+    background: #eee;
+    height: 100%;
+}
+
+.header-container {
+    height: 200px;
+    padding: 50px 20px;
+    background: #75746f;
+    display: flex;
+}
+
+.header-container .icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.header-container .info {
+    flex: 1;
+    padding: 20px;
+}
+
+.header-container .info p {
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+    color: #fff;
+    font-size: 18px;
+}
+
+ul.tab {
+    display: flex;
+    background: #fff;
+}
+
+ul.tab li {
+    flex: 1;
+    height: 40px;
+    line-height: 40px;
+}
+
+ul.tab li:nth-child(1) {
+    border-right: 1px solid #eee;
+}
+
+ul.tab li:nth-child(3) {
+    border-left: 1px solid #eee;
+}
+
+.order .title {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 30px;
+    text-align: left;
+}
+
+.order ul.type {
+    display: flex;
+    background: #fff;
+    padding: 10px 0;
+}
+
+.order ul.type li {
+    flex: 1;
+}
+
+.order ul.type li img {
+    width: 40px;
+}

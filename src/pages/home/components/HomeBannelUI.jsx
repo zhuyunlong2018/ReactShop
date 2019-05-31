@@ -1,20 +1,8 @@
-import React from 'react';
-import { Carousel, WingBlank } from 'antd-mobile';
-const requireContext = require.context("PUBLIC/images/home_bannel", true, /^\.\/.*\.jpg$/);
-const images = requireContext.keys().map(requireContext);
-class HomeBannel extends React.Component {
-  state = {
-    data: [],
-    imgHeight: 176,
-  }
-  componentDidMount() {
-    // simulate img loading
-    setTimeout(() => {
-      this.setState({
-        data: images,
-      });
-    }, 100);
-  }
+import React from 'react'
+import { Carousel, WingBlank } from 'antd-mobile'
+
+class HomeBannelUI extends React.Component {
+ 
   render() {
     return (
       <WingBlank>
@@ -24,14 +12,14 @@ class HomeBannel extends React.Component {
           beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
           afterChange={index => console.log('slide to', index)}
         >
-          {this.state.data.map(val => (
+          {this.props.data.map(val => (
             <a
-              key={val}
+              key={val.id}
               href="#"
-              style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+              style={{ display: 'inline-block', width: '100%', height: this.props.imgHeight }}
             >
               <img
-                src={val}
+                src={val.image}
                 alt=""
                 style={{ width: '100%', verticalAlign: 'top' }}
                 onLoad={() => {
@@ -48,4 +36,4 @@ class HomeBannel extends React.Component {
   }
 }
 
-export default HomeBannel;
+export default HomeBannelUI;

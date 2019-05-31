@@ -23,11 +23,11 @@ class Login extends React.Component {
     handleLogin() {
         login(this.state).then(res => {
             const userInfo = {
-                userName: res.data.name, //用户名
-                mobile: res.data.mobile, //手机号
-                introductor: res.data.introductor,
-                avatar: res.data.avatar, //头像
-                token: res.data.token, //登录凭证
+                userName: res.name, //用户名
+                mobile: res.mobile, //手机号
+                introductor: res.introductor,
+                avatar: res.avatar, //头像
+                token: res.token, //登录凭证
             }
             //保存到本地
             Storage.setStorage(USER_KEY, userInfo)

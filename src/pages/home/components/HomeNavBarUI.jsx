@@ -1,28 +1,10 @@
-import React from 'react';
-import { Popover, NavBar, Icon } from 'antd-mobile';
-import { withRouter } from 'react-router-dom';
+import React from 'react'
+import { Popover, NavBar, Icon } from 'antd-mobile'
+import { withRouter } from 'react-router-dom'
 const Item = Popover.Item;
 const myImg = src => <img src={`https://gw.alipayobjects.com/zos/rmsportal/${src}.svg`} className="am-icon am-icon-xs" alt="" />;
 
-class HomeNavBar extends React.Component {
-
-  state = {
-    visible: false,
-    selected: '',
-  };
-  onSelect = (opt) => {
-    // console.log(opt.props.value);
-    this.setState({
-      visible: false,
-      selected: opt.props.value,
-    });
-  };
-  handleVisibleChange = (visible) => {
-    this.setState({
-      visible,
-    });
-  };
-
+class HomeNavBarUI extends React.Component {
 
   render() {
     return (
@@ -38,7 +20,7 @@ class HomeNavBar extends React.Component {
             <Popover key="1" mask
               overlayClassName="fortest"
               overlayStyle={{ color: 'currentColor' }}
-              visible={this.state.visible}
+              visible={this.props.visible}
               overlay={[
                 (<Item key="4" value="scan" icon={myImg('tOtXhkIWzwotgGSeptou')} data-seed="logId">Scan</Item>),
                 (<Item key="5" value="special" icon={myImg('PKAgAqZWJVNwKsAJSmXd')} style={{ whiteSpace: 'nowrap' }}>My Qrcode</Item>),
@@ -50,8 +32,8 @@ class HomeNavBar extends React.Component {
                 overflow: { adjustY: 0, adjustX: 0 },
                 offset: [-10, 0],
               }}
-              onVisibleChange={this.handleVisibleChange}
-              onSelect={this.onSelect}
+              onVisibleChange={this.props.handleVisibleChange}
+              onSelect={this.props.onSelect}
             >
             <div style={{
               height: '100%',
@@ -71,4 +53,4 @@ class HomeNavBar extends React.Component {
   }
 }
 
-export default withRouter(HomeNavBar);
+export default withRouter(HomeNavBarUI);

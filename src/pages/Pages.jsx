@@ -1,10 +1,10 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 import { TabBar } from 'antd-mobile';
-import Home from 'SRC/pages/home/Home.jsx';
+import Home from 'SRC/pages/home/Home';
 import Category from 'SRC/pages/category/Category.jsx'
 import Cart from 'SRC/pages/cart/Cart.jsx'
-import My from 'SRC/pages/my/My.jsx'
+import My from 'SRC/pages/my/My'
 const requireContext = require.context("PUBLIC/images/footer", true, /^\.\/.*\.png$/);
 
 const images = requireContext.keys().map(requireContext);
@@ -33,6 +33,7 @@ class Pages extends React.Component {
                     tintColor="#33A3F4"
                     barTintColor="white"
                     hidden={this.state.hidden}
+                    prerenderingSiblingsNumber={ 0 }
                 >
                 {tabs.map((i, index) => {
                     return (

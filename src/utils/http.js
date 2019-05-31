@@ -49,10 +49,17 @@ service.interceptors.response.use(
     }
     if (response.status === 200) {
       const data = response.data
-      return data;
-    } else {
-      return Promise.reject(response)
+      switch(data.code) {
+        case 200:
+          return data.data
+        case 100:
+          //登录token失效，进行logout清除本地用户信息操作
+          break;
+        default :
+          //其他，及为失败的各种错误信息，可以进行各种全局弹窗提示
+      }
     }
+    return Promise.reject(response)
   },
   error => {
     console.log('err' + error) // for debug

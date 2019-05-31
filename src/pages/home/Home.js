@@ -1,8 +1,8 @@
 import React from 'react';
-import HomeNavBar from './components/HomeNavBar.jsx';
-import HomeBannel from './components/HomeBannel.jsx';
-import Promotion from './components/Promotion.jsx';
-import SellWell from './components/SellWell.jsx';
+import HomeNavBar from './components/HomeNavBar';
+import HomeBannel from './components/HomeBannel';
+import Promotion from './components/Promotion';
+import SellWell from './components/SellWell';
 class Home extends React.Component {
 
     render() {

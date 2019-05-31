@@ -1,14 +1,14 @@
-import React from 'react';
-import {  Flex, WingBlank } from 'antd-mobile';
-const requireContext = require.context("PUBLIC/images/home_sellwell", true, /^\.\/.*\.jpg$/);
-const images = requireContext.keys().map(requireContext);
-class SellWell extends React.Component {
+import React from 'react'
+import {  Flex, WingBlank } from 'antd-mobile'
+import './SellWell.css'
 
-
+const requireContext = require.context("PUBLIC/images/home_sellwell", true, /^\.\/.*\.jpg$/)
+const images = requireContext.keys().map(requireContext)
+class SellWellUI extends React.Component {
     render() {
         return (
             <div>
-                <WingBlank size='lg' style={blank} >
+                <WingBlank size='lg' className="blank" >
                     <div>----热销商品----</div>
                     <Flex style={{ height: '220px' }}>
                         <Flex.Item style={{ height: '100%' }}>
@@ -30,7 +30,7 @@ class SellWell extends React.Component {
                             </div>
                         </Flex.Item>
                         <Flex.Item style={{ height: '100%' }}>
-                            <div style={flextItem} >
+                            <div className="flex-item" >
                                 <a
                                 href="#"
                                 style={{ display: 'inline-block', width: '100%'}}
@@ -46,7 +46,7 @@ class SellWell extends React.Component {
                                 />
                                 </a>
                             </div>
-                            <div style={flextItem} >
+                            <div className="flex-item" >
                                 <a
                                 href="#"
                                 style={{ display: 'inline-block', width: '100%' }}
@@ -69,17 +69,5 @@ class SellWell extends React.Component {
         )
     }
 }
-const blank = {
-    backgroundColor: '#ebebef',
-    color: '#bbb',
-    textAlign: 'center',
-    lineHeight: '30px'
-}
 
-const flextItem = {
-    width: '100%', 
-    height: '50%', 
-    padding: '5px',
-    overflow: 'hidden'
-}
-export default SellWell;
+export default SellWellUI;
