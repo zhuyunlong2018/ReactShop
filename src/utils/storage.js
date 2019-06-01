@@ -1,5 +1,4 @@
 
-
 export default class Storage {
     
     // 本地存储

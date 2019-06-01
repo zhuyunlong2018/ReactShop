@@ -1,0 +1,56 @@
+{
+    "code": 200,
+    "msg": "success",
+    "data" : [
+        { 
+            "id": 21,
+            "title": "上衣",
+            "children": [
+                { "id": 22, "title":"衬衫", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 23, "title":"短袖", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 24, "title":"长袖", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 25, "title":"毛衣", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 26, "title":"外套", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 27, "title":"运动衣", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" }
+            ]
+        },
+        { 
+            "id": 28,
+            "title": "裤子",
+            "children": [
+                { "id": 29, "title":"长裤", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png"},
+                { "id": 30, "title":"短裤", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png"},
+                { "id": 31, "title":"运动裤", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 32, "title":"内裤", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png"},
+                { "id": 33, "title":"秋裤", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png"},
+                { "id": 34, "title":"不哭", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png"},
+                { "id": 35, "title":"西裤", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png"}
+            ]
+        },
+        { 
+            "id": 36,
+            "title": "头饰",
+            "children": [
+                { "id": 37, "title":"花圈", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 38, "title":"簪子", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 39, "title":"发苦", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 40, "title":"花花", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 41, "title":"帽子", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 42, "title":"发饰", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" }
+            ]
+        },
+        { 
+            "id": 43,
+            "title": "配饰",
+            "children": [
+                { "id": 44, "title":"手表", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 45, "title":"手环", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 46, "title":"手镯", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 47, "title":"手链", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 48, "title":"金子", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" },
+                { "id": 49, "title":"银子", "icon": "https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png" }
+            ]
+        }
+
+    ]
+}
