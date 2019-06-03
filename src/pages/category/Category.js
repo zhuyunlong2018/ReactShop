@@ -16,7 +16,7 @@ class Category extends React.Component {
             })
             this.changeTab(response[0].id)
         })
-        .catch(error => {})
+            .catch(error => { })
     }
 
     changeTab(id) {
@@ -27,7 +27,7 @@ class Category extends React.Component {
                     activedId: id
                 })
             })
-            .catch(error => {})
+                .catch(error => { })
         } else {
             this.setState({
                 activedId: id
@@ -40,14 +40,14 @@ class Category extends React.Component {
         console.log('catagory')
     }
 
-  render() {
-    return (
-        <CategoryUI tabs = { this.state.tabs }
-        selectTab = { this.state.selectTab }
-        activedId = { this.state.activedId }
-        changeTab = { this.changeTab.bind(this) } />
-    );
-  }
+    render() {
+        return (
+            <CategoryUI tabs={this.state.tabs}
+                selectTab={this.state.selectTab}
+                activedId={this.state.activedId}
+                changeTab={this.changeTab.bind(this)} />
+        );
+    }
 }
 
 export default Category;

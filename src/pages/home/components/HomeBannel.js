@@ -13,7 +13,7 @@ class HomeBannel extends React.Component {
       this.setState({
         data: response
       })
-    }).catch(error => {})
+    }).catch(error => { })
   }
 
   componentDidMount() {
@@ -21,8 +21,8 @@ class HomeBannel extends React.Component {
   }
   render() {
     return (
-      <HomeBannelUI data = { this.state.data }
-      imgHeight = { this.state.imgHeight } />
+      <HomeBannelUI data={this.state.data}
+        imgHeight={this.state.imgHeight} />
     );
   }
 }

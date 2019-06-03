@@ -6,20 +6,20 @@ class Promotion extends React.Component {
     state = {
         data: [],
         imgHeight: 176,
-      }
+    }
 
     componentDidMount() {
         // simulate img loading
         setTimeout(() => {
             this.setState({
-            data: images,
+                data: images,
             });
         }, 100);
     }
     render() {
         return (
-            <PromotionUI data={ this.state.data }
-            imgHeight={ this.state.imgHeight } />
+            <PromotionUI data={this.state.data}
+                imgHeight={this.state.imgHeight} />
         );
     }
 }

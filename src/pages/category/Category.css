@@ -1,0 +1,31 @@
+
+.category-box {
+    display: flex;
+    height: 100%;
+}
+
+.category {
+    width: 110px;
+    border-right: 1px solid #eee;
+    overflow: scroll;
+}
+
+.right-container {
+    flex: 1;
+    overflow: scroll;
+}
+
+.actived {
+    color: #1296db;
+}
+
+.grid-item .title {
+    color: #888;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.grid-item .icon {
+    width: 40px;
+    height: 40px;
+}

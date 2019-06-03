@@ -14,18 +14,24 @@ import 'SRC/App.css'
 
 class App extends Component {
 
+  state = {
+    basename: process.env.REACT_APP_BASENAME
+  };
+
+
   componentWillMount() {
     //读取本地存储是否有用户信息
     const userInfo = Storage.getStorage(USER_KEY)
     if (userInfo) {
-       store.dispatch(saveInfo(userInfo))
+      store.dispatch(saveInfo(userInfo))
     }
+    console.log(this.state.basename)
   }
 
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename={this.state.basename}>
           <div className="App">
             <Switch>
               <Route path='/' exact component={Pages}></Route>

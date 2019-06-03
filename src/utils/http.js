@@ -22,7 +22,7 @@ service.interceptors.request.use(
       // 让每个请求携带自定义token 请根据实际情况自行修改
       config.headers['token'] = state.userInfo.token
     }
-    if(!state.commonInfo.hasLoading){
+    if (!state.commonInfo.hasLoading) {
       //显示加载动画
       Toast.loading('', 3);
       store.dispatch(toggleLoading(true))
@@ -30,7 +30,7 @@ service.interceptors.request.use(
     return config
   },
   error => {
-    if(state.commonInfo.hasLoading) {
+    if (state.commonInfo.hasLoading) {
       Toast.hide();
       store.dispatch(toggleLoading(false))
     }
@@ -43,27 +43,27 @@ service.interceptors.request.use(
 // response 拦截器
 service.interceptors.response.use(
   response => {
-    if(state.commonInfo.hasLoading) {
+    if (state.commonInfo.hasLoading) {
       Toast.hide();
       store.dispatch(toggleLoading(false))
     }
     if (response.status === 200) {
       const data = response.data
-      switch(data.code) {
+      switch (data.code) {
         case 200:
           return data.data
         case 100:
           //登录token失效，进行logout清除本地用户信息操作
           break;
-        default :
-          //其他，及为失败的各种错误信息，可以进行各种全局弹窗提示
+        default:
+        //其他，及为失败的各种错误信息，可以进行各种全局弹窗提示
       }
     }
     return Promise.reject(response)
   },
   error => {
     console.log('err' + error) // for debug
-    if(state.commonInfo.hasLoading) {
+    if (state.commonInfo.hasLoading) {
       Toast.hide();
       store.dispatch(toggleLoading(false))
     }
@@ -83,13 +83,13 @@ class http {
     if (baseURL === 'mock') {
       url += '.json'
     }
-    return await service.get(url, {params}) 
+    return await service.get(url, { params })
   }
   static async post(url, params) {
     // console.log(params)
     if (baseURL === 'mock') {
       url += '.json'
-      return await service.get(url, {params})
+      return await service.get(url, { params })
     }
     return await service.post(url, params);
   }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Carousel, WingBlank } from 'antd-mobile'
 
 class HomeBannelUI extends React.Component {
- 
+
   render() {
     return (
       <WingBlank>

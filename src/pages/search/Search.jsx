@@ -21,7 +21,7 @@ class Search extends React.Component {
         // this.manualFocusInst.focus();
     }
     render() {
-        return(
+        return (
             <div>
                 <SearchBar
                     value={this.state.value}

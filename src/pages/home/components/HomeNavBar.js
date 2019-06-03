@@ -24,10 +24,10 @@ class HomeNavBar extends React.Component {
 
   render() {
     return (
-      <HomeNavBarUI onSelect={ this.onSelect } 
-      handleVisibleChange = { this.handleVisibleChange }
-      selected = { this.state.selected }
-      visible = { this.state.visible } />
+      <HomeNavBarUI onSelect={this.onSelect}
+        handleVisibleChange={this.handleVisibleChange}
+        selected={this.state.selected}
+        visible={this.state.visible} />
     )
   }
 }

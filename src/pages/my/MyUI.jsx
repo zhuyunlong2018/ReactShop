@@ -7,7 +7,7 @@ class MyUI extends React.Component {
             <div className="container">
                 <div className="header-container">
                     <div className="icon">
-                        <img src="" alt=""/>
+                        <img src="" alt="" />
                     </div>
                     <div className="info">
                         <p>张三  会员等级：30级</p>
@@ -23,23 +23,23 @@ class MyUI extends React.Component {
                     <p className="title">我的订单</p>
                     <ul className="type">
                         <li>
-                            <img src={require("PUBLIC/images/my/fukuan.png")} alt=""/>
+                            <img src={require("PUBLIC/images/my/fukuan.png")} alt="" />
                             <p>待付款</p>
                         </li>
                         <li>
-                            <img src={require("PUBLIC/images/my/fahuo.png")} alt=""/>
+                            <img src={require("PUBLIC/images/my/fahuo.png")} alt="" />
                             <p>待发货</p>
                         </li>
                         <li>
-                            <img src={require("PUBLIC/images/my/shouhuoyanshou.png")} alt=""/>
+                            <img src={require("PUBLIC/images/my/shouhuoyanshou.png")} alt="" />
                             <p>待收货</p>
                         </li>
                         <li>
-                            <img src={require("PUBLIC/images/my/daipingjia01.png")} alt=""/>
+                            <img src={require("PUBLIC/images/my/daipingjia01.png")} alt="" />
                             <p>待评价</p>
                         </li>
                         <li>
-                            <img src={require("PUBLIC/images/my/yiwancheng_2.png")} alt=""/>
+                            <img src={require("PUBLIC/images/my/yiwancheng_2.png")} alt="" />
                             <p>已完成</p>
                         </li>
                     </ul>

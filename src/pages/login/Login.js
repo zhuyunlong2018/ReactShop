@@ -35,7 +35,7 @@ class Login extends React.Component {
             this.props.saveInfo(userInfo)
             //路由跳转
             this.props.history.push('/')
-        }).catch(error => {})
+        }).catch(error => { })
     }
 
     changePhone(value) {
@@ -48,7 +48,7 @@ class Login extends React.Component {
 
     componentWillMount() {
         //有token，直接跳过登录
-        if (this.props.userInfo.token!=="") {
+        if (this.props.userInfo.token !== "") {
             this.props.history.push('/')
         }
     }
@@ -56,11 +56,11 @@ class Login extends React.Component {
     render() {
         return (
             <LoginUI
-                phone={ this.state.phone } 
-                password={ this.state.password }
-                changePhone={ this.changePhone.bind(this) }
-                changePassword={ this.changePassword.bind(this) }
-                handleLogin={ this.handleLogin.bind(this) }
+                phone={this.state.phone}
+                password={this.state.password}
+                changePhone={this.changePhone.bind(this)}
+                changePassword={this.changePassword.bind(this)}
+                handleLogin={this.handleLogin.bind(this)}
             />
         )
     }

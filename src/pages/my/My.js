@@ -16,7 +16,7 @@ class My extends React.Component {
         )
     }
 
-    componentDidMount(){
+    componentDidMount() {
         //为找到登录token，跳转到登录页面
         if (this.props.userInfo.token === "") {
             this.props.history.push('/login')
@@ -28,7 +28,7 @@ export default withRouter(
     connect(state => ({
         userInfo: state.userInfo
     }), {
-            
+
         }
     )(My)
 )

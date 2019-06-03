@@ -9,8 +9,8 @@ let defaultState = {
 }
 
 // 首页表单数据
-export const userInfo = (state = defaultState , action = {}) => {
-  switch(action.type){
+export const userInfo = (state = defaultState, action = {}) => {
+  switch (action.type) {
     case user.SAVE_INFO:
       return { ...state, ...action.obj };
     default:

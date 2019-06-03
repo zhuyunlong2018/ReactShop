@@ -8,16 +8,16 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <HomeNavBar/>
-                <HomeBannel/>
-                <Promotion/>
-                <SellWell/>
+                <HomeNavBar />
+                <HomeBannel />
+                <Promotion />
+                <SellWell />
             </div>
         );
     }
-    componentDidMount(){
+    componentDidMount() {
         console.log('home')
     }
 }
-    
+
 export default Home;
