@@ -1,20 +1,19 @@
-import React from 'react';
-import { Flex, WingBlank } from 'antd-mobile';
-
+import React from 'react'
+import { Flex, WingBlank } from 'antd-mobile'
+import './Components.css'
 class PromotionUI extends React.Component {
 
     render() {
         return (
             <div style={{ padding: '15px 0' }}>
-                <WingBlank size='lg' style={blank} >
+                <WingBlank size='lg' className="blank" >
                     <div>----优惠促销----</div>
                     <Flex wrap="wrap" >
                         {this.props.data.map(val => (
-                            <div key={val} style={{ width: '50%', padding: '5px' }} >
-                                <a href="#"
-                                    style={{ display: 'inline-block', width: '100%', height: this.props.imgHeight }} >
+                            <div key={val.id} style={{ width: '50%', padding: '5px' }} >
+                                <div style={{ display: 'inline-block', width: '100%', height: this.props.imgHeight }} >
                                     <img
-                                        src={val}
+                                        src={val.image}
                                         alt=""
                                         style={{ width: '100%', verticalAlign: 'top' }}
                                         onLoad={() => {
@@ -22,7 +21,7 @@ class PromotionUI extends React.Component {
                                             this.setState({ imgHeight: 'auto' });
                                         }}
                                     />
-                                </a>
+                                </div>
                             </div>
                         ))}
                     </Flex>
@@ -30,13 +29,6 @@ class PromotionUI extends React.Component {
             </div>
         );
     }
-}
-
-const blank = {
-    backgroundColor: '#ebebef',
-    color: '#bbb',
-    textAlign: 'center',
-    lineHeight: '30px'
 }
 
 

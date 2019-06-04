@@ -1,0 +1,26 @@
+{
+    "code": 200,
+    "msg": "success",
+    "data" : [
+        {
+            "id": 1,
+            "name": "促销一",
+            "image": "http://localhost:3000/images/home_promotion/promotion_1.jpg"
+        },
+        {
+            "id": 2,
+            "name": "促销二",
+            "image": "http://localhost:3000/images/home_promotion/promotion_2.jpg"
+        },
+        {
+            "id": 3,
+            "name": "促销三",
+            "image": "http://localhost:3000/images/home_promotion/promotion_3.jpg"
+        },
+        {
+            "id": 4,
+            "name": "促销四",
+            "image": "http://localhost:3000/images/home_promotion/promotion_4.jpg"
+        }
+    ]
+}

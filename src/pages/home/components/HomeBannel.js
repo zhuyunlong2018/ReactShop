@@ -16,6 +16,7 @@ class HomeBannel extends React.Component {
   }
 
   getBannel() {
+    //获取首页顶部bannel轮播图数据
     getBannel().then(response => {
       this.setState({
         data: response
@@ -24,7 +25,7 @@ class HomeBannel extends React.Component {
   }
 
   componentDidRecover = () => {
-    // 强制更新
+    // router-cache强制更新
     this.forceUpdate();
   }
 

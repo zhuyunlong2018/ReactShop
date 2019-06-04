@@ -6,6 +6,7 @@ import store from 'SRC/store'
 import Pages from 'SRC/pages/Pages.jsx'
 import Login from 'SRC/pages/login/Login'
 import Search from 'SRC/pages/search/Search.jsx'
+import NotFound from 'SRC/pages/NotFound'
 import Storage from 'SRC/utils/storage'
 import { USER_KEY } from 'SRC/utils/keys'
 import { saveInfo } from 'SRC/store/user/action'
@@ -35,6 +36,7 @@ class App extends Component {
             <CacheSwitch>
               <CacheRoute path='/' exact component={Pages}></CacheRoute>
               <CacheRoute path='/search' exact component={Search}></CacheRoute>
+              <Route path="*" exact component={NotFound}></Route>
             </CacheSwitch>
             <Switch>
               <Route path='/login' exact component={Login}></Route>

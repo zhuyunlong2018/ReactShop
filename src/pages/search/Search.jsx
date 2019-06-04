@@ -2,24 +2,31 @@ import React from 'react'
 import { SearchBar, WhiteSpace } from 'antd-mobile'
 import { withRouter } from 'react-router-dom'
 class Search extends React.Component {
-    componentWillMount() {
-        console.log(this.props)
-    }
+
     state = {
         value: '美食',
     };
+
     componentDidMount() {
         // this.autoFocusInst.focus();
     }
+
+    componentWillMount() {
+        
+    }
+
     onChange = (value) => {
         this.setState({ value });
     }
+
     clear = () => {
         this.setState({ value: '' });
     }
+
     handleClick = () => {
         // this.manualFocusInst.focus();
     }
+    
     render() {
         return (
             <div>

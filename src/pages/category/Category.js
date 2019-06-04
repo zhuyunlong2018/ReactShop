@@ -10,24 +10,24 @@ class Category extends React.Component {
     }
 
     getFirstCategories() {
+        //获取侧边栏商品分类
         getFirstCategories().then(response => {
             this.setState({
                 tabs: response
             })
             this.changeTab(response[0].id)
-        })
-            .catch(error => { })
+        }).catch(error => { })
     }
 
     changeTab(id) {
         if (!this.state.selectTab[id]) {
+            //根据侧边栏分类ID，获取分类下级的所有子分类集合
             getChildren({ id }).then(response => {
                 this.setState({
                     selectTab: { [id]: response, ...this.state.selectTab },
                     activedId: id
                 })
-            })
-                .catch(error => { })
+            }).catch(error => { })
         } else {
             this.setState({
                 activedId: id
