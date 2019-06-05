@@ -13,7 +13,7 @@ class HomeNavBarUI extends React.Component {
           mode="light"
           onLeftClick={() => console.log('onLeftClick')}
           rightContent={[
-            <Icon key="0" type="search" style={{ marginRight: '16px' }}
+            <Icon key="0" type="search" style={{ marginRight: '.32rem' }}
               onClick={() => this.props.history.push('/search')}
             />
             ,
@@ -25,7 +25,7 @@ class HomeNavBarUI extends React.Component {
                 (<Item key="4" value="scan" icon={myImg('tOtXhkIWzwotgGSeptou')} data-seed="logId">Scan</Item>),
                 (<Item key="5" value="special" icon={myImg('PKAgAqZWJVNwKsAJSmXd')} style={{ whiteSpace: 'nowrap' }}>My Qrcode</Item>),
                 (<Item key="6" value="button ct" icon={myImg('uQIYTFeRrjPELImDRrPt')}>
-                  <span style={{ marginRight: 5 }}>Help</span>
+                  <span style={{ marginRight: ".1rem" }}>Help</span>
                 </Item>),
               ]}
               align={{
@@ -37,8 +37,8 @@ class HomeNavBarUI extends React.Component {
             >
               <div style={{
                 height: '100%',
-                padding: '0 15px',
-                marginRight: '-15px',
+                padding: '0 .3rem',
+                marginRight: '-.3rem',
                 display: 'flex',
                 alignItems: 'center',
               }}

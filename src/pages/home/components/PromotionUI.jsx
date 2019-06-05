@@ -5,12 +5,12 @@ class PromotionUI extends React.Component {
 
     render() {
         return (
-            <div style={{ padding: '15px 0' }}>
+            <div style={{ padding: '.3rem 0' }}>
                 <WingBlank size='lg' className="blank" >
                     <div>----优惠促销----</div>
                     <Flex wrap="wrap" >
                         {this.props.data.map(val => (
-                            <div key={val.id} style={{ width: '50%', padding: '5px' }} >
+                            <div key={val.id} style={{ width: '50%', padding: '.1rem' }} >
                                 <div style={{ display: 'inline-block', width: '100%', height: this.props.imgHeight }} >
                                     <img
                                         src={val.image}

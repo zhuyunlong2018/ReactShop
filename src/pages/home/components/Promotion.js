@@ -5,7 +5,7 @@ import { getPromotion } from 'SRC/api/home'
 class Promotion extends React.Component {
     state = {
         data: [],
-        imgHeight: 176,
+        imgHeight: "3.2rem",
     }
 
     getPromotion() {
@@ -19,6 +19,7 @@ class Promotion extends React.Component {
     componentDidMount() {
         this.getPromotion()
     }
+    
     render() {
         return (
             <PromotionUI data={this.state.data}

@@ -16,7 +16,7 @@ class HomeBannelUI extends React.Component {
             <a
               key={val.id}
               href="#"
-              style={{ display: 'inline-block', width: '100%', height: this.props.imgHeight }}
+              style={{ display: 'inline-block', width: '100%'}}
             >
               <img
                 src={val.image}

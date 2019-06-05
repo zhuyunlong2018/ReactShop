@@ -13,7 +13,7 @@ class CategoryUI extends React.Component {
                                 this.props.changeTab(i.id)
                             }}
                         >
-                            <span className={this.props.activedId === i.id ? "actived" : ""}>{i.title}</span>
+                            <span className={this.props.activedId === i.id ? "actived title" : "title"}>{i.title}</span>
                         </List.Item>
                     );
                 })
@@ -32,6 +32,7 @@ class CategoryUI extends React.Component {
                             >
                                 <div className="sub-title">{i.title}</div>
                                 <Grid data={i.children}
+                                    hasLine={false}
                                     columnNum={3}
                                     renderItem={dataItem => (
                                         <div className="grid-item" >

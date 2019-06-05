@@ -12,7 +12,6 @@ class HomeBannel extends React.Component {
 
   state = {
     data: [],
-    imgHeight: 176,
   }
 
   getBannel() {
@@ -35,8 +34,7 @@ class HomeBannel extends React.Component {
 
   render() {
     return (
-      <HomeBannelUI data={this.state.data}
-        imgHeight={this.state.imgHeight} />
+      <HomeBannelUI data={this.state.data} />
     );
   }
 }

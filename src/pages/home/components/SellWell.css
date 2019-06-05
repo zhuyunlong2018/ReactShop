@@ -2,6 +2,6 @@
 .flex-item {
     width: 100%;
     height: 50%;
-    padding: 5px;
+    padding: .1rem;
     overflow: hidden;
 }

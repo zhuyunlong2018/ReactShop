@@ -5,7 +5,7 @@
 }
 
 .category {
-    width: 110px;
+    width: 2.2rem;
     border-right: 1px solid #eee;
     overflow: scroll;
 }
@@ -15,17 +15,29 @@
     overflow: scroll;
 }
 
+.category .title {
+    font-size: .32rem
+}
+
 .actived {
     color: #1296db;
 }
 
+.right-container .am-grid .am-flexbox .am-flexbox-item .am-grid-item-content {
+    padding: 0;
+}
+
 .grid-item .title {
     color: #888;
-    font-size: 14px;
-    margin-top: 12px;
+    font-size: .28rem;
 }
 
 .grid-item .icon {
-    width: 40px;
-    height: 40px;
+    width: 1rem;
+    height: 1rem;
+}
+
+.sub-title {
+    font-size: .32rem;
+    height: .8rem;
 }

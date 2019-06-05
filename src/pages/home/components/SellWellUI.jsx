@@ -10,9 +10,9 @@ class SellWellUI extends React.Component {
             <div>
                 <WingBlank size='lg' className="blank" >
                     <div>----热销商品----</div>
-                    <Flex style={{ height: '220px' }}>
+                    <Flex style={{ height: '3.4rem' }}>
                         <Flex.Item style={{ height: '100%' }}>
-                            <div style={{ height: '100%', padding: '5px', overflow: 'hidden' }} >
+                            <div style={{ height: '100%', padding: '.1rem', overflow: 'hidden' }} >
                                 <a
                                     href="#"
                                     style={{ display: 'inline-block', height: '100%' }}

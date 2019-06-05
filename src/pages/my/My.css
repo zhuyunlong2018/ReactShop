@@ -4,30 +4,30 @@
 }
 
 .header-container {
-    height: 200px;
-    padding: 50px 20px;
+    height: 4rem;
+    padding: 1rem .4rem;
     background: #75746f;
     display: flex;
 }
 
 .header-container .icon {
-    width: 100px;
-    height: 100px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: .04rem solid #fff;
 }
 
 .header-container .info {
     flex: 1;
-    padding: 20px;
+    padding: .4rem;
 }
 
 .header-container .info p {
-    height: 30px;
-    line-height: 30px;
+    height: .6rem;
+    line-height: .6rem;
     text-align: left;
     color: #fff;
-    font-size: 18px;
+    font-size: .36rem;
 }
 
 ul.tab {
@@ -37,8 +37,8 @@ ul.tab {
 
 ul.tab li {
     flex: 1;
-    height: 40px;
-    line-height: 40px;
+    height: .8rem;
+    line-height: .8rem;
 }
 
 ul.tab li:nth-child(1) {
@@ -50,16 +50,16 @@ ul.tab li:nth-child(3) {
 }
 
 .order .title {
-    height: 30px;
-    line-height: 30px;
-    padding-left: 30px;
+    height: .6rem;
+    line-height: .6rem;
+    padding-left: .6rem;
     text-align: left;
 }
 
 .order ul.type {
     display: flex;
     background: #fff;
-    padding: 10px 0;
+    padding: .2rem 0;
 }
 
 .order ul.type li {
@@ -67,5 +67,5 @@ ul.tab li:nth-child(3) {
 }
 
 .order ul.type li img {
-    width: 40px;
+    width: .8rem;
 }
