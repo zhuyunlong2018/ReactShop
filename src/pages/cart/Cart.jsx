@@ -1,6 +1,8 @@
 import React from 'react'
 
-
+/**
+ * 购物车栏
+ */
 class Cart extends React.Component {
 
     render() {

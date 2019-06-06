@@ -1,5 +1,8 @@
 import React from 'react'
 
+/**
+ * 404页面
+ */
 class NotFound extends React.Component {
     constructor(props, context) {
         super(props, context);

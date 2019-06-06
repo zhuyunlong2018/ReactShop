@@ -1,4 +1,7 @@
 
+/**
+ * 本地存储工具类
+ */
 export default class Storage {
 
     // 本地存储
@@ -24,7 +27,7 @@ export default class Storage {
             return JSON.parse(data);
         }
         else {
-            return '';
+            return false;
         }
     }
     // 删除本地存储

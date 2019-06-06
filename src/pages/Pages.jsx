@@ -8,6 +8,10 @@ import My from 'SRC/pages/my/My'
 const requireContext = require.context("PUBLIC/images/footer", true, /^\.\/.*\.png$/);
 
 const images = requireContext.keys().map(requireContext);
+
+/**
+ * 商城页面，底部tab栏
+ */
 class Pages extends React.Component {
 
     constructor(props) {

@@ -1,6 +1,10 @@
 import React from 'react'
 import { SearchBar, WhiteSpace } from 'antd-mobile'
 import { withRouter } from 'react-router-dom'
+
+/**
+ * 搜索页面
+ */
 class Search extends React.Component {
 
     state = {

@@ -5,7 +5,7 @@ import Utils from 'SRC/utils'
 import './index.css'
 import * as serviceWorker from './serviceWorker'
 
-//计算rem单位
+//计算css响应式rem单位
 Utils.initRem()
 
 ReactDOM.render(<App />, document.getElementById('root'))

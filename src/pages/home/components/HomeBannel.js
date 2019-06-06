@@ -2,6 +2,10 @@ import React from 'react'
 import { getBannel } from 'SRC/api/home'
 import HomeBannelUI from './HomeBannelUI'
 import { withRouter } from 'react-router-dom'
+
+/**
+ * 主页顶部轮播图
+ */
 class HomeBannel extends React.Component {
 
   constructor(props, ...args) {

@@ -2,6 +2,9 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import HomeNavBarUI from './HomeNavBarUI'
 
+/**
+ * 首页顶部状态栏
+ */
 class HomeNavBar extends React.Component {
 
   state = {

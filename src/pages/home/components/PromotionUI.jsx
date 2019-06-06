@@ -18,8 +18,9 @@ class PromotionUI extends React.Component {
                                         style={{ width: '100%', verticalAlign: 'top' }}
                                         onLoad={() => {
                                             window.dispatchEvent(new Event('resize'));
-                                            this.setState({ imgHeight: 'auto' });
+                                            this.props.setState({ imgHeight: 'auto' });
                                         }}
+                                        onClick={()=>{this.props.showProduct(val.id)}}
                                     />
                                 </div>
                             </div>

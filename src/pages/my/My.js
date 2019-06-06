@@ -4,6 +4,9 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import MyUI from './MyUI'
 
+/**
+ * 我的页面
+ */
 class My extends React.Component {
 
     static propTypes = {

@@ -3,18 +3,22 @@ import { Toast } from 'antd-mobile';
 import store from 'SRC/store'
 import { toggleLoading } from 'SRC/store/common/action'
 
-const baseURL = process.env.REACT_APP_API// api 的 base_url
+// api 的 base_url
+const baseURL = process.env.REACT_APP_API
 
 // 创建axios实例
 const service = axios.create({
   baseURL: baseURL,
   timeout: 5000 // 请求超时时间
 })
+
+//获取redux
 let state = store.getState()
 store.subscribe(() => {
   //使用subscribe，当数据更改时会重新获取
   state = store.getState();
 });
+
 // request拦截器
 service.interceptors.request.use(
   config => {
@@ -53,7 +57,7 @@ service.interceptors.response.use(
         case 200:
           return data.data
         case 100:
-          //登录token失效，进行logout清除本地用户信息操作
+          //TODO 登录token失效，进行logout清除本地用户信息操作
           break;
         default:
         //其他，及为失败的各种错误信息，可以进行各种全局弹窗提示
@@ -94,6 +98,5 @@ class http {
     return await service.post(url, params);
   }
 }
-
 
 export default http;

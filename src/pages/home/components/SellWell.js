@@ -2,6 +2,9 @@ import React from 'react'
 import SellWellUI from './SellWellUI'
 import { getSellWell } from 'SRC/api/home'
 
+/**
+ * 热销商品栏
+ */
 class SellWell extends React.Component {
 
     state = {
@@ -9,6 +12,7 @@ class SellWell extends React.Component {
     }
 
     getSellWell() {
+        //获取热销商品列表
         getSellWell().then(response => {
             this.setState({
                 data: response

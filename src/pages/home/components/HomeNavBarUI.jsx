@@ -37,8 +37,6 @@ class HomeNavBarUI extends React.Component {
             >
               <div style={{
                 height: '100%',
-                padding: '0 .3rem',
-                marginRight: '-.3rem',
                 display: 'flex',
                 alignItems: 'center',
               }}

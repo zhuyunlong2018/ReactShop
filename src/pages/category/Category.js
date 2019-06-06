@@ -2,6 +2,9 @@ import React from 'react'
 import { getFirstCategories, getChildren } from 'SRC/api/category'
 import CategoryUI from './CategoryUI'
 
+/**
+ * 商品分类
+ */
 class Category extends React.Component {
     state = {
         activedId: 1,

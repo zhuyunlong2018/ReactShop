@@ -8,6 +8,9 @@ import LoginUI from './LoginUI'
 import Storage from 'SRC/utils/storage'
 import { USER_KEY } from 'SRC/utils/keys'
 
+/**
+ * 登录页面
+ */
 class Login extends React.Component {
 
     static propTypes = {

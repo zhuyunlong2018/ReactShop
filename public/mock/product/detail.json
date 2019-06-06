@@ -1,0 +1,11 @@
+{
+    "code":0,
+    "msg": "success",
+    "data": {
+        "id": 1,
+        "name": "裙子",
+        "main_image": "",
+        "images": [],
+        "category_id": 2
+    }
+}

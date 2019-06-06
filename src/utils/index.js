@@ -1,5 +1,8 @@
 export default class Utils {
 
+    /**
+     * 根据屏幕宽度 初始化css响应单位rem
+     */
     static initRem() {
         const docEl = document.documentElement,
             docBody = document.body,
@@ -7,21 +10,18 @@ export default class Utils {
             pageMaxWidth = 750,
             rootHtml = document.getElementsByTagName('html')[0],
             resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-            recalc = function () {
-                var clientWidth = clientWidth = docEl.clientWidth || docBody.clientWidht;
-
+            recalc = () => {
+                let clientWidth = docEl.clientWidth || docBody.clientWidht;
                 //最大宽度显示为750的宽度
                 if (clientWidth > pageMaxWidth) {
                     clientWidth = pageMaxWidth
                 }
-
-                if (!clientWidth) return;
-                rootHtml.style.setProperty('font-size', baseFontSize * (clientWidth / pageMaxWidth) + 'px', 'important');
+                if (!clientWidth) return
+                rootHtml.style.setProperty('font-size', baseFontSize * (clientWidth / pageMaxWidth) + 'px', 'important')
             };
-        if (!window.addEventListener) return;
-
-        window.addEventListener(resizeEvt, recalc, false);
-
-        recalc();
+        if (!window.addEventListener) return
+        //添加监听事件
+        window.addEventListener(resizeEvt, recalc, false)
+        recalc()
     }
 }
