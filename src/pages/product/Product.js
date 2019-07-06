@@ -12,7 +12,6 @@ class Product extends React.Component {
         console.log( this.props.match.params.id)
     }
 
-
     componentWillMount() {
         
     }
@@ -20,7 +19,7 @@ class Product extends React.Component {
     render() {
         return (
             <div>
-                hello product
+                hello product1
             </div>
         )
     }

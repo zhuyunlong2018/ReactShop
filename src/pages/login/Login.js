@@ -18,13 +18,8 @@ class Login extends React.Component {
         saveInfo: PropTypes.func.isRequired,
     }
 
-    state = {
-        phone: '',
-        password: '',
-    };
-
-    handleLogin() {
-        login(this.state).then(res => {
+    handleLogin(data) {
+        login(data).then(res => {
             const userInfo = {
                 userName: res.name, //用户名
                 mobile: res.mobile, //手机号
@@ -41,14 +36,6 @@ class Login extends React.Component {
         }).catch(error => { })
     }
 
-    changePhone(value) {
-        this.setState({ phone: value })
-    }
-
-    changePassword(value) {
-        this.setState({ password: value })
-    }
-
     componentWillMount() {
         //有token，直接跳过登录
         if (this.props.userInfo.token !== "") {
@@ -58,13 +45,7 @@ class Login extends React.Component {
 
     render() {
         return (
-            <LoginUI
-                phone={this.state.phone}
-                password={this.state.password}
-                changePhone={this.changePhone.bind(this)}
-                changePassword={this.changePassword.bind(this)}
-                handleLogin={this.handleLogin.bind(this)}
-            />
+            <LoginUI handleLogin={this.handleLogin.bind(this)} />
         )
     }
 }

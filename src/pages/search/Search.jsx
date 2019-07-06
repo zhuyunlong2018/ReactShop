@@ -2,6 +2,7 @@ import React from 'react'
 import { SearchBar, WhiteSpace } from 'antd-mobile'
 import { withRouter } from 'react-router-dom'
 
+import "./Search.css"
 /**
  * 搜索页面
  */

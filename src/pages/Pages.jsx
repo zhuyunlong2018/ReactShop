@@ -17,7 +17,7 @@ class Pages extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: 'home',
+            selectedTab: 'my',
             hidden: false,
             fullScreen: false,
         };

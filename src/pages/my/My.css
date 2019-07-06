@@ -4,8 +4,8 @@
 }
 
 .header-container {
-    height: 4rem;
-    padding: 1rem .4rem;
+    height: 3rem;
+    padding: .5rem .4rem;
     background: #75746f;
     display: flex;
 }
@@ -68,4 +68,16 @@ ul.tab li:nth-child(3) {
 
 .order ul.type li img {
     width: .8rem;
+}
+
+.list {
+    margin-top: .2rem;
+}
+
+.list li {
+    height: .8rem;
+    line-height: .8rem;
+    background: #fff;
+    margin: .05rem 0;
+    font-size: .32rem;
 }
