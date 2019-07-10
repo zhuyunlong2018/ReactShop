@@ -45,6 +45,8 @@ class MyUI extends React.Component {
                     </ul>
                 </div>
                 <ul className="list">
+                    <li>我的钱包</li>
+                    <li>我的评价</li>
                     <li>地址管理</li>
                     <li onClick={this.props.logout} >退出登录</li>
                 </ul>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-
+import ProductUI from './ProductUI'
 
 /**
  * 商品、产品详情页
@@ -18,9 +18,7 @@ class Product extends React.Component {
 
     render() {
         return (
-            <div>
-                hello product1
-            </div>
+            <ProductUI />
         )
     }
 }
