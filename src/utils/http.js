@@ -47,6 +47,7 @@ service.interceptors.request.use(
 // response 拦截器
 service.interceptors.response.use(
   response => {
+    console.log(response)
     if (state.commonInfo.hasLoading) {
       Toast.hide();
       store.dispatch(toggleLoading(false))

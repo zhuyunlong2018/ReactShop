@@ -13,7 +13,7 @@ class LoginUI extends React.Component {
         this.props.form.validateFields((error, value) => {
             if (!error) {
                 let data = value
-                data.phone = data.phone.replace(/\s*/g, "")
+                data.mobile = data.phone.replace(/\s*/g, "")
                 this.props.handleLogin(data)
             } else {
                 for (var i in error) {
@@ -33,7 +33,7 @@ class LoginUI extends React.Component {
                 <div className="logo">
 
                 </div>
-                <List class="form-box">
+                <List className="form-box">
                     <InputItem
                         {...getFieldProps('phone', {
                             rules: [

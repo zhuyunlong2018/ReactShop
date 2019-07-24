@@ -20,9 +20,10 @@ class Login extends React.Component {
 
     handleLogin(data) {
         login(data).then(res => {
+            console.log(res)
             const userInfo = {
-                userName: res.name, //用户名
-                mobile: res.mobile, //手机号
+                userName: data.name, //用户名
+                mobile: data.mobile, //手机号
                 introductor: res.introductor,
                 avatar: res.avatar, //头像
                 token: res.token, //登录凭证
