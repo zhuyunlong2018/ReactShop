@@ -14,6 +14,7 @@ import { saveInfo } from 'SRC/store/user/action'
 import 'antd-mobile/dist/antd-mobile.css'
 import 'PUBLIC/css/normalize.css'
 import 'SRC/App.css'
+import ProductsList from 'SRC/pages/productsList/ProductsList';
 
 class App extends Component {
 
@@ -47,6 +48,7 @@ class App extends Component {
               <CacheRoute path='/search' exact component={Search}></CacheRoute>
               <Route path='/login' exact component={Login}></Route>
               <Route path='/product/:id' exact component={Product}></Route>
+              <Route path='/productsList/:id' exact component={ProductsList}></Route>
               <Route path="*" exact component={NotFound}></Route>
             </CacheSwitch>
           </div>

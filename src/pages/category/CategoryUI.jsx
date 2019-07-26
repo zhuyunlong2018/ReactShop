@@ -34,8 +34,9 @@ class CategoryUI extends React.Component {
                                 <Grid data={i.children}
                                     hasLine={false}
                                     columnNum={3}
+                                    onClick={_el => this.props.showProducts(_el.id)}
                                     renderItem={dataItem => (
-                                        <div className="grid-item" >
+                                        <div className="grid-item"  >
                                             <img className="icon" src={dataItem.icon} alt="" />
                                             <div className="title">
                                                 <span>{dataItem.title}</span>

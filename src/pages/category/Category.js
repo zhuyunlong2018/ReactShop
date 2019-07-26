@@ -1,6 +1,7 @@
 import React from 'react'
 import { getFirstCategories, getChildren } from 'SRC/api/category'
 import CategoryUI from './CategoryUI'
+import { withRouter } from 'react-router-dom'
 
 /**
  * 商品分类
@@ -38,6 +39,11 @@ class Category extends React.Component {
         }
     }
 
+    showProducts(id) {
+        console.log(id)
+        this.props.history.push('/productsList/'+ id)
+    }
+
     componentDidMount() {
         this.getFirstCategories()
         console.log('catagory')
@@ -48,10 +54,11 @@ class Category extends React.Component {
             <CategoryUI tabs={this.state.tabs}
                 selectTab={this.state.selectTab}
                 activedId={this.state.activedId}
-                changeTab={this.changeTab.bind(this)} />
+                changeTab={this.changeTab.bind(this)}
+                showProducts={this.showProducts.bind(this)} />
         );
     }
 }
 
-export default Category;
+export default withRouter(Category);
 
