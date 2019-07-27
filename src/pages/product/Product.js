@@ -2,6 +2,7 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import ProductUI from './ProductUI'
 
+
 /**
  * 商品、产品详情页
  */

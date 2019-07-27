@@ -1,0 +1,22 @@
+
+.product {
+    .tabsContainer {
+        height: calc(100vh - 43.5px - .8rem);
+    }
+
+    .bottom {
+        position: fixed;
+        bottom: 0;
+        height: .8rem;
+        width: 100vw;
+        background: red;
+        display: flex;
+
+        li {
+            line-height: .8rem;
+        }
+    }
+}
+
+
+

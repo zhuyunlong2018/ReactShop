@@ -15,7 +15,7 @@ class BannelUI extends React.Component {
           <a
             key={val.id}
             href="#"
-            style={{ display: 'inline-block', width: '100%', height: "3.4rem" }}
+            style={{ display: 'inline-block', width: '100%' }}
           >
             <img
               src={val.image}
