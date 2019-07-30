@@ -1,46 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Drawer, NavBar, List, ListView, Icon, PullToRefresh } from 'antd-mobile'
-import "./ProductsList.css"
-
-const data = [
-    {
-        id: 1,
-        img: 'https://zos.alipayobjects.com/rmsportal/dKbkpPXKfvZzWCM.png',
-        title: 'Meet hotel',
-        des: '不是所有的兼职汪都需要风吹日晒',
-    },
-    {
-        id: 1,
-        img: 'https://zos.alipayobjects.com/rmsportal/XmwCzSeJiqpkuMB.png',
-        title: 'McDonald\'s invites you',
-        des: '不是所有的兼职汪都需要风吹日晒',
-    },
-    {
-        id: 1,
-        img: 'https://zos.alipayobjects.com/rmsportal/hfVtzEhPzTUewPm.png',
-        title: 'Eat the week',
-        des: '不是所有的兼职汪都需要风吹日晒',
-    },
-    {
-        id: 1,
-        img: 'https://zos.alipayobjects.com/rmsportal/dKbkpPXKfvZzWCM.png',
-        title: 'Meet hotel',
-        des: '不是所有的兼职汪都需要风吹日晒',
-    },
-    {
-        id: 1,
-        img: 'https://zos.alipayobjects.com/rmsportal/XmwCzSeJiqpkuMB.png',
-        title: 'McDonald\'s invites you',
-        des: '不是所有的兼职汪都需要风吹日晒',
-    },
-    {
-        id: 1,
-        img: 'https://zos.alipayobjects.com/rmsportal/hfVtzEhPzTUewPm.png',
-        title: 'Eat the week',
-        des: '不是所有的兼职汪都需要风吹日晒',
-    },
-];
+import style from "./ProductsList.module.scss"
 
 class ProductsListUI extends React.Component {
 
@@ -53,16 +14,6 @@ class ProductsListUI extends React.Component {
         this.state = {
             open: false,//筛选抽屉开关
             dataSource: ds,//listView组件内容
-            list: {
-                limit: 10,
-                offset: 0,
-                pageNum: 1,
-                pageSize: 10,
-                prompt: null,
-                rows: data,
-                totalCount: 20,
-                totalPage: 2
-            },
             upLoading: false,//上拉加载动画
             pullLoading: false,//下拉刷新动画
             height: document.documentElement.clientHeight * 3 / 4,//listview容器高度
@@ -78,29 +29,32 @@ class ProductsListUI extends React.Component {
     //上拉加载
     onEndReached = (page, lastPage) => {
         //当前页小于总页数继续请求下一页数据，否则停止请求数据
-        if (Number(page) < Number(lastPage)) {
+        if (Number(page) < Number(lastPage) && !this.state.upLoading) {
             this.setState({ upLoading: true })
             //接口请求下一页数据,完成后将upLoading设为false
-            setTimeout(() => {
+            this.props.changePage(page + 1).finally(() => {
                 this.setState({ upLoading: false })
-            }, 3000);
+            })
         }
     }
+
     //下拉刷新
     onRefresh = () => {
-        this.setState({ pullLoading: true })
-        //接口请求第一页数据,完成后将pullLoading设为false
-        setTimeout(() => {
-            this.setState({ pullLoading: false })
-        }, 3000);
+        if (!this.state.pullLoading) {
+            this.setState({ pullLoading: true })
+            //接口请求第一页数据,完成后将pullLoading设为false
+            this.props.refresh().finally(() => {
+                this.setState({ pullLoading: false })
+            })
+        }
     }
 
     //获取item进行展示
     renderRow = (item, i) => {
         return (
-            <div className="list-item" onClick={() => { this.props.goProductDetail(item.id) }}>
-                <div className="img"><img src={item.img} alt="" /></div>
-                <div className="title">
+            <div className={style.listItem} onClick={() => { this.props.goProductDetail(item.id) }}>
+                <div className={style.img}><img src={item.image} alt="" /></div>
+                <div className={style.title}>
                     <p>{item.title}</p>
                     <p>￥100</p>
                 </div>
@@ -115,7 +69,8 @@ class ProductsListUI extends React.Component {
 
 
     render() {
-        const { list, dataSource, upLoading, pullLoading } = this.state;
+        const { dataSource, upLoading, pullLoading } = this.state;
+        const { products, pageNum, pageSize, totalPage } = this.props
         const sidebar = (<List>
             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((i, index) => {
                 if (index === 0) {
@@ -129,7 +84,6 @@ class ProductsListUI extends React.Component {
                 >Category{index}</List.Item>);
             })}
         </List>);
-
 
         return (
             <div >
@@ -146,7 +100,7 @@ class ProductsListUI extends React.Component {
                     ]}
                 >检索关键词</NavBar>
                 <Drawer
-                    className="my-drawer"
+                    className={style.myDrawer}
                     style={{ minHeight: "100%" }}
                     enableDragHandle
                     contentStyle={{ color: '#A6A6A6', textAlign: 'center' }}
@@ -154,40 +108,33 @@ class ProductsListUI extends React.Component {
                     sidebar={sidebar}
                     open={this.state.open}
                     onOpenChange={this.onOpenChange}
+                    dragToggleDistance={0}
                 >
-                    <div className="products-list-container">
-                        {
-                            list && list.rows && list.rows.length ?
-                                <ListView
-                                    ref={el => this.lv = el}
-                                    dataSource={dataSource.cloneWithRows(list.rows)}
-                                    renderRow={(rowData, id1, i) => this.renderRow(rowData, i)}
-                                    initialListSize={10}
-                                    pageSize={10}
-                                    renderFooter={() => (
-                                        <div style={{ padding: 30, textAlign: 'center', display: upLoading ? 'block' : 'none' }}>
-                                            {(list.pageNum < list.totalPage) && upLoading ? <Icon type="loading" /> : null}
-                                        </div>
-                                    )}
-                                    onEndReached={() => this.onEndReached(list.pageNum, list.totalPage)}
-                                    onEndReachedThreshold={20}
-                                    onScroll={() => { console.log('scroll'); }}
-                                    style={{
-                                        height: this.state.height,
-                                        width: "100vw",
-                                        overflow: 'auto',
-                                    }}
-                                    pullToRefresh={<PullToRefresh
-                                        refreshing={pullLoading}
-                                        onRefresh={this.onRefresh}
-                                    />}
-                                />
-                                :
-                                list && list.rows && !list.rows.length ?
-                                    <div >
-                                        <p>暂无数据</p>
-                                    </div> : null
-                        }
+                    <div className={style.productsListContainer}>
+                        <ListView
+                            ref={el => this.lv = el}
+                            dataSource={dataSource.cloneWithRows(products)}
+                            renderRow={(rowData, i) => this.renderRow(rowData, i)}
+                            initialListSize={pageSize}
+                            pageSize={pageSize}
+                            renderFooter={() => (
+                                <div style={{ padding: 30, textAlign: 'center', display: upLoading ? 'block' : 'none' }}>
+                                    {(pageNum < totalPage) && upLoading ? <Icon type="loading" /> : null}
+                                </div>
+                            )}
+                            onEndReached={() => this.onEndReached(pageNum, totalPage)}
+                            onEndReachedThreshold={20}
+                            onScroll={() => { console.log('scroll'); }}
+                            style={{
+                                height: this.state.height,
+                                width: "100vw",
+                                overflow: 'auto',
+                            }}
+                            pullToRefresh={<PullToRefresh
+                                refreshing={pullLoading}
+                                onRefresh={this.onRefresh}
+                            />}
+                        >暂无数据</ListView>
                     </div>
                 </Drawer>
             </div>
