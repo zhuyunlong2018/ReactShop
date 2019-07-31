@@ -1,0 +1,47 @@
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    height: .8rem;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background: #fff;
+
+    li {
+        font-size: .24rem;
+        img {
+            width: .4rem;
+        }
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+            width: 1rem;
+        }
+
+        &:nth-child(4),
+        &:nth-child(5) {
+            flex: 1;
+
+            div {
+                height: .7rem;
+                line-height: .7rem;
+                border-radius: .35rem;
+                font-size: .3rem;
+                color: #fff;
+                margin: 0 .1rem;
+            }
+        }
+
+        &:nth-child(4) div {
+            background: #e91e63;
+        }
+
+        &:nth-child(5) div {
+            background: #eca847;
+        }
+    }
+}

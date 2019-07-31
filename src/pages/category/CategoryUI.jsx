@@ -1,8 +1,21 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { List, Grid } from 'antd-mobile'
-import './Category.css'
+import style from './Category.module.scss'
 
+
+
+let categoryRightBox
 class CategoryUI extends React.Component {
+
+    componentDidMount() {
+        categoryRightBox = ReactDOM.findDOMNode(this.lv)
+    }
+    
+    componentDidUpdate() {
+        categoryRightBox.scrollTop=0
+    }
+
     render() {
         const sidebar = (
             <List>
@@ -13,7 +26,7 @@ class CategoryUI extends React.Component {
                                 this.props.changeTab(i.id)
                             }}
                         >
-                            <span className={this.props.activedId === i.id ? "actived title" : "title"}>{i.title}</span>
+                            <span className={this.props.activedId === i.id ? style.actived : ""}>{i.title}</span>
                         </List.Item>
                     );
                 })
@@ -30,15 +43,15 @@ class CategoryUI extends React.Component {
                                 style={{ border: 'none' }}
                                 activeStyle={{ background: '#fff' }}
                             >
-                                <div className="sub-title">{i.title}</div>
+                                <div className={style.subTitle}>{i.title}</div>
                                 <Grid data={i.children}
                                     hasLine={false}
                                     columnNum={3}
                                     onClick={_el => this.props.showProducts(_el.id)}
                                     renderItem={dataItem => (
-                                        <div className="grid-item"  >
-                                            <img className="icon" src={dataItem.icon} alt="" />
-                                            <div className="title">
+                                        <div className={style.gridItem}  >
+                                            <img className={style.icon} src={dataItem.icon} alt="" />
+                                            <div className={style.title}>
                                                 <span>{dataItem.title}</span>
                                             </div>
                                         </div>
@@ -51,9 +64,12 @@ class CategoryUI extends React.Component {
         );
 
         return (
-            <ul className="category-box">
-                <li className="category">{sidebar}</li>
-                <li className="right-container">{renderContent}</li>
+            <ul className={style.categoryBox}>
+                <li className={style.category}>{sidebar}</li>
+                <li className={style.rightContainer} 
+                    ref={el => this.lv = el}>
+                    {renderContent}
+                </li>
             </ul>
         );
     }

@@ -4,6 +4,7 @@ import { Carousel } from 'antd-mobile'
 class BannelUI extends React.Component {
 
   render() {
+    const { data } = this.props
     return (
       <Carousel
         autoplay={false}
@@ -11,14 +12,14 @@ class BannelUI extends React.Component {
         beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
         afterChange={index => console.log('slide to', index)}
       >
-        {this.props.data.map(val => (
+        {data && data.map(val => (
           <a
-            key={val.id}
+            key={val}
             href="#"
             style={{ display: 'inline-block', width: '100%' }}
           >
             <img
-              src={val.image}
+              src={val}
               alt=""
               style={{ width: '100%', verticalAlign: 'top' }}
               onLoad={() => {
