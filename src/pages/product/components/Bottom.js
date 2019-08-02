@@ -1,4 +1,6 @@
 import React from 'react'
+import { Badge } from 'antd-mobile'
+import { withRouter } from 'react-router-dom'
 import style from './Components.module.scss'
 
 
@@ -7,20 +9,42 @@ import style from './Components.module.scss'
  */
 class Bottom extends React.Component {
 
+    /**
+     * 进入购物车
+     */
+    goShoppingCart() {
+        this.props.history.push("/cart")
+    }
+
+    /**
+     * 进入客服页面
+     */
+    goSerivice() {
+
+    }
+
+    /**
+     * 返回上一页
+     */
+    goBack() {
+        this.props.history.goBack()
+    }
 
     render() {
         return (
             <ul className={style.bottom}>
-                <li>
-                    <img src={require("PUBLIC/images/customer_service.png")} alt="" />
+                <li onClick={this.goBack.bind(this)}>
+                    <img src={require("PUBLIC/images/return_icon.png")} alt="" />
+                    <p>返回</p>
+                </li>
+                <li onClick={this.goSerivice.bind(this)}>
+                    <Badge dot>
+                        <img src={require("PUBLIC/images/customer_service.png")} alt="" />
+                    </Badge>
                     <p>联系客服</p>
                 </li>
-                <li>
-                    <img src={require("PUBLIC/images/shop.png")} alt="" />
-                    <p>店铺</p>
-                </li>
-                <li>
-                    <img src={require("PUBLIC/images/shopping_cart.png")} alt="" />
+                <li onClick={this.goShoppingCart.bind(this)}>
+                    <Badge text={'3'}><img src={require("PUBLIC/images/shopping_cart.png")} alt="" /></Badge>
                     <p>购物车</p>
                 </li>
                 <li>
@@ -34,4 +58,4 @@ class Bottom extends React.Component {
     }
 }
 
-export default Bottom
+export default withRouter(Bottom)

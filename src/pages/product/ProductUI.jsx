@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tabs, Badge, Drawer } from 'antd-mobile'
+import { Tabs, Drawer } from 'antd-mobile'
 import Bannel from './components/Bannel'
 import BuyDrawer from './components/BuyDrawer'
 import Bottom from './components/Bottom'
@@ -19,15 +19,14 @@ class ProductUI extends React.Component {
         this.setState({ open: !this.state.open });
     }
 
-
     render() {
 
-        const { product, selectSku } = this.props
+        const { product, selectSku, changeSelectSku, changeCount } = this.props
 
         const tabs = [
-            { title: <Badge>商品</Badge> },
-            { title: <Badge >详情</Badge> },
-            { title: <Badge>评论</Badge> },
+            { title: "商品" },
+            { title: "详情" },
+            { title: "评论" },
         ];
         return (
             <div className={style.product}>
@@ -38,7 +37,10 @@ class ProductUI extends React.Component {
                     sidebar={
                         <div className={style.selectSpk}>
                             <BuyDrawer product={product}
-                                selectSku={selectSku} />
+                                selectSku={selectSku}
+                                onOpenChange={this.onOpenChange}
+                                changeSelectSku={changeSelectSku}
+                                changeCount={changeCount} />
                         </div>
                     }
                     open={this.state.open}

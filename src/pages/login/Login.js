@@ -18,6 +18,10 @@ class Login extends React.Component {
         saveInfo: PropTypes.func.isRequired,
     }
 
+    /**
+     * 登录处理
+     * @param {Object} data 
+     */
     handleLogin(data) {
         login(data).then(res => {
             console.log(res)
@@ -33,14 +37,14 @@ class Login extends React.Component {
             //保存用户信息到redux
             this.props.saveInfo(userInfo)
             //路由跳转
-            this.props.history.push('/')
+            this.props.history.push('/home')
         }).catch(error => { })
     }
 
     componentWillMount() {
         //有token，直接跳过登录
         if (this.props.userInfo.token !== "") {
-            this.props.history.push('/')
+            this.props.history.push('/home')
         }
     }
 

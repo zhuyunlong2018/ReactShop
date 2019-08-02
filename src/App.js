@@ -44,7 +44,7 @@ class App extends Component {
         <BrowserRouter basename={this.state.basename}>
           <div className="App">
             <CacheSwitch>
-              <CacheRoute path='/' exact component={Pages}></CacheRoute>
+              <CacheRoute path='/:page' exact component={Pages}></CacheRoute>
               <CacheRoute path='/search' exact component={Search}></CacheRoute>
               <Route path='/login' exact component={Login}></Route>
               <Route path='/product/:id' exact component={Product}></Route>

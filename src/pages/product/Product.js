@@ -19,7 +19,25 @@ class Product extends React.Component {
             },
             product: {},//存储商品详细信息
             selectSku: null,//选择的具体商品sku
+            count: 1, //选择了数量
         }
+    }
+
+    /**
+     * 修改选中的配置
+     * @param {Object} selectSku 
+     */
+    changeSelectSku(selectSku) {
+        console.log(selectSku)
+        this.setState({ selectSku })
+    }
+
+    /**
+     * 修改数量
+     * @param {Number} count 
+     */
+    changeCount(count) {
+        this.setState({ count })
     }
 
     componentWillMount() {
@@ -54,7 +72,9 @@ class Product extends React.Component {
         const { product, selectSku } = this.state
         return (
             <ProductUI product={product}
-                selectSku={selectSku} />
+                selectSku={selectSku}
+                changeSelectSku={this.changeSelectSku.bind(this)}
+                changeCount={this.changeCount.bind(this)} />
         )
     }
 }

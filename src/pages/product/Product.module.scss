@@ -17,6 +17,10 @@
         background: #fff;
     }
 
+    :global(.am-drawer.am-drawer-bottom .am-drawer-sidebar) {
+        overflow-y: visible;
+        transform: translateY(110%);
+    }
 
 }
 
