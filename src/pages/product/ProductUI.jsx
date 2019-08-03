@@ -10,18 +10,23 @@ class ProductUI extends React.Component {
 
     state = {
         open: false,//抽屉开关
+        type: "",//抽屉开关为添加购物车还是立即购买（add or buy）
     }
 
     /**
      * 打开下方 加入购物车、立即购买抽屉
      */
     onOpenChange = (...args) => {
+        const intersection  = ["add", "buy"].filter(v =>  args.indexOf(v) > -1 )
+        if (intersection.length > 0) {
+            this.setState({ type: intersection[0] })
+        }
         this.setState({ open: !this.state.open });
     }
 
     render() {
 
-        const { product, selectSku, changeSelectSku, changeCount } = this.props
+        const { product, selectSku, changeSelectSku, changeCount, addShoppingCart, buyNow } = this.props
 
         const tabs = [
             { title: "商品" },
@@ -36,11 +41,14 @@ class ProductUI extends React.Component {
                     position={"bottom"}
                     sidebar={
                         <div className={style.selectSpk}>
-                            <BuyDrawer product={product}
+                            <BuyDrawer clickType={this.state.type}
+                                product={product}
                                 selectSku={selectSku}
                                 onOpenChange={this.onOpenChange}
                                 changeSelectSku={changeSelectSku}
-                                changeCount={changeCount} />
+                                changeCount={changeCount}
+                                addShoppingCart={addShoppingCart}
+                                buyNow={buyNow} />
                         </div>
                     }
                     open={this.state.open}
@@ -74,7 +82,8 @@ class ProductUI extends React.Component {
                         </Tabs>
                         :
                         <div>我们没卖这个产品</div>}
-                    <Bottom onOpenChange={this.onOpenChange.bind(this)} />
+                    <Bottom onOpenChange={this.onOpenChange.bind(this)}
+                            cartInfo={this.props.cartInfo} />
                 </Drawer>
             </div>
         );

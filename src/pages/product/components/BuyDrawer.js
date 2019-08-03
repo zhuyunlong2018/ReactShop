@@ -24,6 +24,18 @@ class BuyDrawer extends React.Component {
     }
 
     /**
+    * 点击确认（加入购物车或立即购买）
+    */
+    clickConfirm() {
+        this.props.onOpenChange()
+        if (this.props.clickType === "add") {
+            this.props.addShoppingCart()
+        } else {
+            this.props.buyNow()
+        }
+    }
+
+    /**
      * 增加或减少数量
      * @param {bool} type 
      */
@@ -65,7 +77,7 @@ class BuyDrawer extends React.Component {
                                         Object.keys(product).length > 0 &&
                                         product.sku.map(sku =>
                                             <li key={sku.id} onClick={() => changeSelectSku(sku)}
-                                              className={sku.id===selectSku.id?style.selected:""} >
+                                                className={sku.id === selectSku.id ? style.selected : ""} >
                                                 {sku.description}
                                             </li>
                                         )
@@ -87,7 +99,8 @@ class BuyDrawer extends React.Component {
                         </div>
 
                         <div className={style.bottom}>
-                            <div className={style.confirm}>确认</div>
+                            <div className={style.confirm} onClick={this.clickConfirm.bind(this)}
+                            >确认</div>
                         </div>
                     </div>
                 }

@@ -44,14 +44,16 @@ class Bottom extends React.Component {
                     <p>联系客服</p>
                 </li>
                 <li onClick={this.goShoppingCart.bind(this)}>
-                    <Badge text={'3'}><img src={require("PUBLIC/images/shopping_cart.png")} alt="" /></Badge>
+                    <Badge text={this.props.cartInfo.list.length > 0 ? this.props.cartInfo.list.length : ""}>
+                        <img src={require("PUBLIC/images/shopping_cart.png")} alt="" />
+                    </Badge>
                     <p>购物车</p>
                 </li>
                 <li>
-                    <div onClick={() => this.props.onOpenChange()}>加入购物车</div>
+                    <div onClick={() => this.props.onOpenChange("add")}>加入购物车</div>
                 </li>
                 <li>
-                    <div onClick={() => this.props.onOpenChange()}>立即购买</div>
+                    <div onClick={() => this.props.onOpenChange("buy")}>立即购买</div>
                 </li>
             </ul>
         )

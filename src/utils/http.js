@@ -90,6 +90,7 @@ class http {
     }
     return await service.get(url, { params })
   }
+
   static async post(url, params) {
     // console.log(params)
     if (baseURL === 'mock') {
@@ -97,6 +98,24 @@ class http {
       return await service.get(url, { params })
     }
     return await service.post(url, params);
+  }
+
+  static async put(url, params) {
+    // console.log(params)
+    if (baseURL === 'mock') {
+      url += '.json'
+      return await service.get(url, { params })
+    }
+    return await service.put(url, params);
+  }
+
+  static async delete(url, params) {
+    // console.log(params)
+    if (baseURL === 'mock') {
+      url += '.json'
+      return await service.get(url, { params })
+    }
+    return await service.delete(url, params);
   }
 }
 

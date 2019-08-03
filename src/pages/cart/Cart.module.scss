@@ -1,0 +1,12 @@
+
+.cart {
+    height: 100vh;
+
+    .container {
+        height: calc(100vh - 1rem - 50px);
+    }
+
+    .bottom {
+        height: 1rem;
+    }
+}

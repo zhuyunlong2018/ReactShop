@@ -44,11 +44,12 @@ class App extends Component {
         <BrowserRouter basename={this.state.basename}>
           <div className="App">
             <CacheSwitch>
-              <CacheRoute path='/:page' exact component={Pages}></CacheRoute>
               <CacheRoute path='/search' exact component={Search}></CacheRoute>
               <Route path='/login' exact component={Login}></Route>
               <Route path='/product/:id' exact component={Product}></Route>
               <Route path='/productsList/:id' exact component={ProductsList}></Route>
+              {/* page放在最后面，路由优先匹配上方页面 */}
+              <CacheRoute path='/:page' exact component={Pages}></CacheRoute>
               <Route path="*" exact component={NotFound}></Route>
             </CacheSwitch>
           </div>
