@@ -5,10 +5,15 @@ import { getShoppingCart } from "SRC/api/shoppingCart"
 
 //获取购物车列表
 export const getCartList = () => {
-    return dispatch => {
+    return (dispatch, getState) => {
         //TODO 从localstorage中获取，并且与后台数据融合
         //Storage.getStorage(SHOPPING_CART_KEY)
 
+        //TODO 此处可以判断是否登录来进行是否请求后台数据与本地数据进行融合
+        // console.log(getState().userInfo)
+        if (getState().userInfo.token === "") {
+            //return storage中数据
+        }
         //异步从后台获取
         return getShoppingCart().then(res => {
             console.log(res)

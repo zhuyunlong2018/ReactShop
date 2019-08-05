@@ -91,7 +91,6 @@ class Product extends React.Component {
 
         //获取购物车信息
         if (this.props.userInfo.token !== "" && this.props.cartInfo.list.length === 0) {
-            //TODO 此处可以传入参数，判断是否登录来进行是否请求后台数据与本地数据进行融合
             this.props.getCartList().finally(() => {
                 // console.log(this.props.cartInfo)
             })
