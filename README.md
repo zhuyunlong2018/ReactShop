@@ -1,68 +1,93 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ReactShop
 
-## Available Scripts
+#### 介绍
+一个简单、简陋的基于React全家桶、Antd.mobile的商城项目（半半半成品）
 
-In the project directory, you can run:
+后端采用springboot
 
-### `npm start`
+[配套后端SpringShop](https://gitee.com/zhuyunlong2018/SpringShop)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### 本机环境
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. node: v10.3.0
+2. npm: v6.1.0
+3. yarn: v1.15.2
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 安装教程
+1. 下载源码
+```shell
+$ git clone https://gitee.com/zhuyunlong2018/ReactShop.git
 
-### `npm run build`
+```
+2. 安装依赖
+```shell
+$ npm install
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#or use cnpm
+$ cnpm install
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+#or use yarn
+$ yarn
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. 启动
+```shell
+$ npm run start
 
-### `npm run eject`
+#or use yarn
+$ yarn start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### 其他说明
+1. .env.development文件中修改REACT_APP_API=mock,可以将开发环境所有请求转为请求public下对应json文件，json文件路劲和命名为SRC/api文件夹下对应接口URL
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 主要功能
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+###### 正在实现功能
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+· 商城登录
 
-## Learn More
+· 产品分类
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+· 产品详情
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+· 购物车
 
-### Code Splitting
+· 个人中心
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+· 检索商品
 
-### Analyzing the Bundle Size
+· 订单
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+###### 补充功能
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+· 首页广告管理
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+· 优惠券功能
 
-### `npm run build` fails to minify
+· 秒杀、抢购、拼购、预约
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+· 会员积分
+
+· 评论晒单
+
+· 物流跟踪
+
+· 商品同类型推荐
+
+· 客服功能
+
+以上功能都没有……
+
+
+#### 参与贡献
+
+1. Fork 本仓库
+2. 新建 Feat_xxx 分支
+3. 提交代码
+4. 新建 Pull Request

@@ -7,4 +7,7 @@ export const addShoppingCart = params => http.put("shoppingCart/add", params)
 export const getShoppingCart = params => http.get("shoppingCart/list", params)
 
 //修改购物车的某个商品数量
-export const changeNumber = params => http.put("shoppingCart/changeNumber", params)
+export const changeNumber = params => http.put("shoppingCart/changeNum", params)
+
+//删除购物车某个商品
+export const deleteOne = params => http.delete("shoppingCart/delete", params)

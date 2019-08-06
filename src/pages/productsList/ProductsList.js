@@ -81,7 +81,7 @@ class ProductsList extends React.Component {
 
     /**
      * 进入商品详情页
-     * @param {*} id 
+     * @param {Number} id 
      */
     goProductDetail(id) {
         this.props.history.push("/product/" + id)

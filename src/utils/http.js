@@ -84,7 +84,6 @@ service.interceptors.response.use(
 class http {
   // 使用async ... await
   static async get(url, params) {
-    // console.log(params)
     if (baseURL === 'mock') {
       url += '.json'
     }
@@ -92,7 +91,6 @@ class http {
   }
 
   static async post(url, params) {
-    // console.log(params)
     if (baseURL === 'mock') {
       url += '.json'
       return await service.get(url, { params })
@@ -101,7 +99,6 @@ class http {
   }
 
   static async put(url, params) {
-    // console.log(params)
     if (baseURL === 'mock') {
       url += '.json'
       return await service.get(url, { params })
@@ -110,12 +107,11 @@ class http {
   }
 
   static async delete(url, params) {
-    // console.log(params)
     if (baseURL === 'mock') {
       url += '.json'
       return await service.get(url, { params })
     }
-    return await service.delete(url, params);
+    return await service.delete(url, { data: params });
   }
 }
 

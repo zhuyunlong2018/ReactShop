@@ -11,6 +11,47 @@
             .right {
                 flex: 1;
                 display: flex;
+
+                .image img {
+                    max-width: 1.4rem;
+                }
+
+                .detail {
+                    flex: 1;
+                    padding: 0 .2rem;
+
+                    .title {
+                        height: .8rem;
+                    }
+
+                    .count {
+                        display: flex;
+
+                        .price {
+                            flex: 1;
+                            text-align: left;
+                        }
+                    }
+
+                    .stepper {
+                        width: 2rem;
+
+                        :global(.am-icon-xxs) {
+                            width: .4rem;
+                            height: .4rem;
+                        }
+                    }
+
+                    .detailBottom {
+                        text-align: right;
+
+                        .delete {
+                            color: #ccc;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                
             }
 
             :global(.am-list-item .am-list-thumb:first-child) {
@@ -21,9 +62,7 @@
                 margin: auto;
             }
 
-            .image img {
-                max-width: 1.4rem;
-            }
+
         }
 
 
@@ -61,7 +100,7 @@
             color: #ccc;
         }
 
-        
+
         .right {
             display: flex;
             height: 100%;

@@ -61,7 +61,7 @@ class Product extends React.Component {
                 newList[index].number += this.state.count
             } else {
                 //添加新配置，将产品配置product_sku加入购物车list的属性中
-                res.productSkuEntity = this.state.selectSku
+                res.productSku = this.state.selectSku
                 newList.push(res)
             }
             //推送到redux中存储

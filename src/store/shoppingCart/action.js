@@ -19,7 +19,7 @@ export const getCartList = () => {
             console.log(res)
             //将sku商品图片json解析为对象
             res.forEach(element => {
-                element.productSkuEntity.images = JSON.parse(element.productSkuEntity.images)
+                element.productSku.images = JSON.parse(element.productSku.images)
             });
             dispatch({
                 type: cart.GET_CART_LIST,
@@ -33,7 +33,7 @@ export const getCartList = () => {
 
 //更新购物车列表
 export const updateCartList = list => {
-    //TODO 同时更新存储storage
+    //同时更新存储storage
     Storage.setStorage(SHOPPING_CART_KEY, list)
     return {
         type: cart.UPDATE_CART_LIST,
