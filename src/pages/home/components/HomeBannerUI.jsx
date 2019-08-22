@@ -1,7 +1,7 @@
 import React from 'react'
 import { Carousel, WingBlank } from 'antd-mobile'
 
-class HomeBannelUI extends React.Component {
+class HomeBannerUI extends React.Component {
 
   render() {
     return (
@@ -15,7 +15,7 @@ class HomeBannelUI extends React.Component {
           {this.props.data.map(val => (
             <a
               key={val.id}
-              href="#"
+              href={val.link?val.link:"#"}
               style={{ display: 'inline-block', width: '100%', height: "3.4rem"}}
             >
               <img
@@ -36,4 +36,4 @@ class HomeBannelUI extends React.Component {
   }
 }
 
-export default HomeBannelUI;
+export default HomeBannerUI;

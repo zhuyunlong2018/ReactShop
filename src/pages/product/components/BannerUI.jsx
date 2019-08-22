@@ -1,7 +1,7 @@
 import React from 'react'
 import { Carousel } from 'antd-mobile'
 
-class BannelUI extends React.Component {
+class BannerUI extends React.Component {
 
   render() {
     const { data } = this.props
@@ -35,4 +35,4 @@ class BannelUI extends React.Component {
   }
 }
 
-export default BannelUI;
+export default BannerUI;

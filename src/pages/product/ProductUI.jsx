@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tabs, Drawer } from 'antd-mobile'
-import Bannel from './components/Bannel'
+import Banner from './components/Banner'
 import BuyDrawer from './components/BuyDrawer'
 import Bottom from './components/Bottom'
 import style from "./Product.module.scss"
@@ -62,7 +62,7 @@ class ProductUI extends React.Component {
                             onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
                         >
                             <div className={style.tabsContainer}>
-                                {selectSku && <Bannel images={selectSku.images} />}
+                                {selectSku && <Banner images={selectSku.images} />}
                                 <div className="price">
                                     <div >¥<em>5999</em>.00</div>
                                 </div>

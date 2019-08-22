@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Drawer, NavBar, List, ListView, Icon, PullToRefresh } from 'antd-mobile'
+import ToTheTop from 'SRC/pages/common/ToTheTop'
 import style from "./ProductsList.module.scss"
 
 class ProductsListUI extends React.Component {
@@ -17,6 +18,7 @@ class ProductsListUI extends React.Component {
             upLoading: false,//上拉加载动画
             pullLoading: false,//下拉刷新动画
             height: document.documentElement.clientHeight * 3 / 4,//listview容器高度
+            scrollTop: 0,
         }
     }
 
@@ -68,8 +70,14 @@ class ProductsListUI extends React.Component {
     }
 
 
+    onScroll() {
+        this.setState({
+            scrollTop: ReactDOM.findDOMNode(this.lv).scrollTop
+        })
+    }
+
     render() {
-        const { dataSource, upLoading, pullLoading } = this.state;
+        const { dataSource, upLoading, pullLoading, scrollTop } = this.state;
         const { products, pageNum, pageSize, totalPage } = this.props
         const sidebar = (<List>
             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((i, index) => {
@@ -84,7 +92,6 @@ class ProductsListUI extends React.Component {
                 >Category{index}</List.Item>);
             })}
         </List>);
-
         return (
             <div >
                 <NavBar
@@ -124,7 +131,7 @@ class ProductsListUI extends React.Component {
                             )}
                             onEndReached={() => this.onEndReached(pageNum, totalPage)}
                             onEndReachedThreshold={20}
-                            onScroll={() => { console.log('scroll'); }}
+                            onScroll={() => { this.onScroll() }}
                             style={{
                                 height: this.state.height,
                                 width: "100vw",
@@ -134,8 +141,11 @@ class ProductsListUI extends React.Component {
                                 refreshing={pullLoading}
                                 onRefresh={this.onRefresh}
                             />}
-                        >暂无数据</ListView>
+                        >
+                            <span>{(totalPage == 0 || pageNum == totalPage)?"没有更多数据啦":"正在加载中……"}</span>
+                        </ListView>
                     </div>
+                    <ToTheTop dom={this.lv} scrollTop={scrollTop} />
                 </Drawer>
             </div>
         )

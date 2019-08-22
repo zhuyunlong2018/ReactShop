@@ -1,12 +1,12 @@
 import React from 'react'
-import { getBannel } from 'SRC/api/home'
-import HomeBannelUI from './HomeBannelUI'
+import { getBanner } from 'SRC/api/home'
+import HomeBannerUI from './HomeBannerUI'
 import { withRouter } from 'react-router-dom'
 
 /**
  * 主页顶部轮播图
  */
-class HomeBannel extends React.Component {
+class HomeBanner extends React.Component {
 
   constructor(props, ...args) {
     super(props, ...args)
@@ -20,7 +20,7 @@ class HomeBannel extends React.Component {
 
   getBannel() {
     //获取首页顶部bannel轮播图数据
-    getBannel().then(response => {
+    getBanner().then(response => {
       this.setState({
         data: response
       })
@@ -38,9 +38,9 @@ class HomeBannel extends React.Component {
 
   render() {
     return (
-      <HomeBannelUI data={this.state.data} />
+      <HomeBannerUI data={this.state.data} />
     );
   }
 }
 
-export default withRouter(HomeBannel);
+export default withRouter(HomeBanner);

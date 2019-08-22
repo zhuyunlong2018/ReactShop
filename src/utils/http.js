@@ -57,9 +57,6 @@ service.interceptors.response.use(
       switch (data.code) {
         case 200:
           return data.data
-        case 100:
-          //TODO 登录token失效，进行logout清除本地用户信息操作
-          break;
         default:
         //其他，及为失败的各种错误信息，可以进行各种全局弹窗提示
       }
@@ -68,6 +65,7 @@ service.interceptors.response.use(
   },
   error => {
     console.log('err' + error) // for debug
+    //TODO 登录失效，进行logout处理
     if (state.commonInfo.hasLoading) {
       Toast.hide();
       store.dispatch(toggleLoading(false))
